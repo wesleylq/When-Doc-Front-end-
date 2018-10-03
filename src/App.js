@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './components/NavBar'
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import LoginPage from './login/LoginPage';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      </div>
+      <Router>
+        <Route exact path = '/' component = {LoginPage}/>
+      </Router>
     );
   }
 }
