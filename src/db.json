@@ -19,25 +19,6 @@
       "expertise": "farm",
       "email": "fer@email.com",
       "phone": "3225178"
-    },
-    {
-      "pass": "asd",
-      "id": "sd",
-      "name": "asd",
-      "cpf": "asd",
-      "crm": "asd",
-      "expertise": "asd",
-      "email": "asd",
-      "phone": "asd"
-    },
-    {
-      "pass": null,
-      "id": "Zx5jHdx",
-      "name": null,
-      "cpf": null,
-      "expertise": null,
-      "email": null,
-      "phone": null
     }
-  ]
+   ]
 }
