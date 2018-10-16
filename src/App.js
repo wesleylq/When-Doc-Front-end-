@@ -11,7 +11,7 @@ class App extends Component {
         	<div>
 	        	<Switch>
 	        		<Route exact path = '/' component = {LoginPage}/>
-			       	<Route path = '/menu' component = {NavBar}/>
+			       	<Route path = 'menu' component = {NavBar}/>
 	        	</Switch>
 	        </div>
         </main>
