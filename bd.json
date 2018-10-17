@@ -1,0 +1,28 @@
+{
+  "paciente": [
+    {
+      "nome": "lucas",
+      "data": "14/11/1995",
+      "cpf": "123456789",
+      "id": 1
+    },
+    {
+      "nome": "maiara",
+      "data": "10/07/1997",
+      "cpf": "123456789",
+      "id": 2
+    },
+    {
+      "nome": "s",
+      "data": "s",
+      "cpf": "s",
+      "id": 3
+    },
+    {
+      "nome": "sd",
+      "data": "d",
+      "cpf": "ddd",
+      "id": 4
+    }
+  ]
+}

@@ -3,15 +3,17 @@ import './App.css';
 import { Link, Switch, Route } from 'react-router-dom';
 import LoginPage from './login/LoginPage';
 import NavBar from './menu/NavBar.js'
+import Paciente from './paciente/Paciente.js'
 class App extends Component {
   render() {
     return (
     	<div className="App">
         <main> 
         	<div>
+           <NavBar/>
 	        	<Switch>
 	        		<Route exact path = '/' component = {LoginPage}/>
-			       	<Route path = 'menu' component = {NavBar}/>
+              <Route path = '/paciente' component = {Paciente}/>
 	        	</Switch>
 	        </div>
         </main>

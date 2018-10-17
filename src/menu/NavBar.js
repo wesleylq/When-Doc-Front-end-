@@ -32,7 +32,7 @@ class NavBar extends React.Component {
                               <NavLink to="#">Meu Perfil</NavLink>
                           </NavItem>
                           <NavItem>
-                              <NavLink to="#">Pacientes</NavLink>
+                              <NavLink className="nav-link" to="/paciente">Pacientes</NavLink>
                           </NavItem>
                         </NavbarNav>
                         <NavbarNav right id="navbar">

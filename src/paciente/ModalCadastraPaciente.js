@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Input, Button, Fa, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 import axios from 'axios';
+import api from './PacienteServer';
 
  class ModalCadastraPaciente extends Component {
  constructor(props) {
@@ -12,20 +13,20 @@ import axios from 'axios';
 }
 
 handleSubmit = event => {
-  const user = {
+  const newPatient = {
     nome: this.state.nome,
     data: this.state.data,
     cpf: this.state.cpf
 
-  }
+  } 
 
-  axios.post(`http://localhost:3000/paciente`,  user )
-  .then(res => {
+  //axios.post(`http://localhost:3000/paciente`,  newPatient )
+    //api.savePatient(newPatient) 
+    .then(res => {
     console.log(res);
     console.log(res.data);
   })
 }
-
 
 toggle() {
   this.setState({
@@ -44,9 +45,9 @@ render() {
             <form onSubmit={this.handleSubmit}>
               <p className="h5 text-center">Cadastrar Paciente</p>
               <div className="grey-text">
-                <Input label="nome" onChange={(value) => this.setState({nome: value.target.value})} className="form-control is-valid" required/>
-                <Input onChange={(value) => this.setState({data: value.target.value})} className="form-control is-valid" required/>
-                <Input onChange={(value) => this.setState({cpf: value.target.value})} className="form-control is-valid" required/>
+                <Input label="nome" onChange={(value) => this.setState({nome: value.target.value})} />
+                <Input onChange={(value) => this.setState({data: value.target.value})} />
+                <Input onChange={(value) => this.setState({cpf: value.target.value})}/>
                 <Button color="mdb-color" type="submit" rounded className="float-right">Cadastar</Button>
                 <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
               </div>

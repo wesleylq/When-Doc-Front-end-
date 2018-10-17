@@ -4,6 +4,7 @@ import { MDBDataTable } from 'mdbreact';
 import './Paciente.css'
 import { Table, TableBody, TableHead  } from 'mdbreact'
 import ModalCadastraPaciente from './ModalCadastraPaciente.js'
+import api from './PacienteServer';
 class Paciente extends Component {
 
     state = {
@@ -44,3 +45,4 @@ class Paciente extends Component {
 }
 
 export default Paciente
+
