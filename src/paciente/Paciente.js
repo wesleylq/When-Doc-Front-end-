@@ -4,14 +4,14 @@ import { MDBDataTable } from 'mdbreact';
 import './Paciente.css'
 import { Table, TableBody, TableHead  } from 'mdbreact'
 import ModalCadastraPaciente from './ModalCadastraPaciente.js'
-import api from './PacienteServer';
+import api from './PacienteServer.js';
 class Paciente extends Component {
 
     state = {
         pacientes: []
     }
     componentDidMount() {
-        axios.get(`http://localhost:3000/paciente`)
+        api.loadPatients()
         .then(res => {
             const pacientes = res.data;
             this.setState({ pacientes });

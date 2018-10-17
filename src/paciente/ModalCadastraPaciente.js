@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Input, Button, Fa, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 import axios from 'axios';
-import api from './PacienteServer';
+import api from './PacienteServer.js';
 
  class ModalCadastraPaciente extends Component {
  constructor(props) {
@@ -19,12 +19,9 @@ handleSubmit = event => {
     cpf: this.state.cpf
 
   } 
-
-  //axios.post(`http://localhost:3000/paciente`,  newPatient )
-    //api.savePatient(newPatient) 
-    .then(res => {
-    console.log(res);
-    console.log(res.data);
+    api.savePatient(newPatient).then(res => {
+      console.log(res);
+      console.log(res.data);
   })
 }
 
