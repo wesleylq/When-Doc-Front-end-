@@ -34,7 +34,7 @@ toggle() {
 render() {
   return (
     <div>
-      <Button onClick={this.toggle}>add paciente</Button>
+      <Button size="sm" className="button circle button-energized ion-paper-airplane" onClick={this.toggle}>s</Button>
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
         <ModalBody>
           <Col md="12">

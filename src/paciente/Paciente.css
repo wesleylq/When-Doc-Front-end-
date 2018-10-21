@@ -5,3 +5,8 @@
     margin-right: auto;
     margin-top: 5%;
 }
+
+.circle {
+    border-radius: 50%;
+    height: 55px;
+}
