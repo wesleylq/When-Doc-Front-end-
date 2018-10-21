@@ -22,8 +22,8 @@ class Paciente extends Component {
       render() {
         return (
             <div> 
-               <ModalCadastraPaciente/>
-                <Table small reponsive maxHeight bordered hover id="con">
+                <ModalCadastraPaciente/>
+                <Table small reponsive maxHeight bordered hover id="tabelaPacientes">
                     <TableHead>
                         <tr>
                             <th>Nome</th>
