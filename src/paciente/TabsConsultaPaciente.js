@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TabsColsultaPaciente = (props) => {
+const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
 	  		<ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -23,6 +23,6 @@ const TabsColsultaPaciente = (props) => {
     );
 }
 
-export default TabsColsultaPaciente;
+export default TabsConsultaPaciente;
 
 

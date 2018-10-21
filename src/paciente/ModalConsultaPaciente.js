@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-import TabsColsultaPaciente from './TabsColsultaPaciente'
+import TabsConsultaPaciente from './TabsConsultaPaciente'
 
 class ModalConsultaPaciente extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class ModalConsultaPaciente extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
 
-            <TabsColsultaPaciente/>
+            <TabsConsultaPaciente/>
 
             <Button size="sm" color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
           </ModalBody>
