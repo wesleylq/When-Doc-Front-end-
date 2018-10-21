@@ -31,7 +31,6 @@ toggle() {
   });
 }
 
-
 render() {
   return (
     <div>

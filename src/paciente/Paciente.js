@@ -3,8 +3,9 @@ import axios from 'axios';
 import { MDBDataTable } from 'mdbreact';
 import './Paciente.css'
 import { Table, TableBody, TableHead  } from 'mdbreact'
-import ModalCadastraPaciente from './ModalCadastraPaciente.js'
+import ModalCadastraPaciente from './ModalCadastraPaciente'
 import api from './PacienteServer.js';
+import ModalConsultaPaciente from './ModalConsultaPaciente'
 class Paciente extends Component {
 
     state = {
@@ -22,12 +23,13 @@ class Paciente extends Component {
         return (
             <div> 
                <ModalCadastraPaciente/>
-                <Table striped bordered hover id="con">
+                <Table small reponsive maxHeight bordered hover id="con">
                     <TableHead>
                         <tr>
                             <th>Nome</th>
                             <th>Data Nascimento</th>
                             <th>CPF</th>
+                            <th>Acao</th>
                         </tr>
                     </TableHead>
                     <TableBody>
@@ -36,6 +38,7 @@ class Paciente extends Component {
                                 <td>{paciente.nome}</td>
                                 <td>{paciente.data}</td>
                                 <td>{paciente.cpf}</td>
+                                <td> <ModalConsultaPaciente teste={paciente.id}/> </td>
                             </tr>)}
                     </TableBody>
                 </Table>
