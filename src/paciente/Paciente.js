@@ -26,7 +26,7 @@ class Paciente extends Component {
                     <TableHead>
                         <tr>
                             <th>Nome</th>
-                            <th>Data Nascimento</th>
+                            <th>Email</th>
                             <th>CPF</th>
                             <th>Acao</th>
                         </tr>
@@ -35,7 +35,7 @@ class Paciente extends Component {
                        { this.state.pacientes.map(paciente =>
                             <tr> 
                                 <td>{paciente.nome}</td>
-                                <td>{paciente.data}</td>
+                                <td>{paciente.email}</td>
                                 <td>{paciente.cpf}</td>
                                 <td> <ModalConsultaPaciente teste={paciente.id}/> </td>
                             </tr>)}

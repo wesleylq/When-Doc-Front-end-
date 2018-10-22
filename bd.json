@@ -2,30 +2,21 @@
   "paciente": [
     {
       "nome": "lucas",
-      "data": "14/11/1995",
+      "email": "lucas@gmail.com",
       "cpf": "123456789",
       "id": 1
     },
     {
       "nome": "maiara",
-      "data": "10/07/1997",
+      "email": "maiara@gmail.com",
       "cpf": "123456789",
       "id": 2
     },
     {
       "nome": "michelle",
-      "data": "01/01/2001",
+      "email": "michelle@gmail.com",
       "cpf": "123456789",
       "id": 2
-    },
-    {
-      "nome": "diego",
-      "data": "17/09/2000",
-      "cpf": "85476576985",
-      "id": 3
-    },
-    {
-      "id": 4
     }
   ]
 }

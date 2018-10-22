@@ -14,7 +14,7 @@ import api from './PacienteServer.js';
 handleSubmit = event => {
   const newPatient = {
     nome: this.state.nome,
-    data: this.state.data,
+    email: this.state.email,
     cpf: this.state.cpf
 
   } 
@@ -42,9 +42,9 @@ render() {
             <form onSubmit={this.handleSubmit}>
               <p className="h5 text-center">Cadastrar Paciente</p>
               <div className="grey-text">
-                <Input label="nome" onChange={(value) => this.setState({nome: value.target.value})} required/>
-                <Input label="data" onChange={(value) => this.setState({data: value.target.value})} required/>
-                <Input label="cpf" onChange={(value) => this.setState({cpf: value.target.value})} required/>
+                <Input label="nome" type="text" onChange={(value) => this.setState({nome: value.target.value})} required/>
+                <Input label="email" type="email" onChange={(value) => this.setState({email: value.target.value})} required/>
+                <Input label="cpf" type="text" onChange={(value) => this.setState({cpf: value.target.value})} required/>
                 <Button color="mdb-color" type="submit" rounded className="float-right">Cadastar</Button>
                 <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
               </div>
