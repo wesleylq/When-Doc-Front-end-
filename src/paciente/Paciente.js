@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { MDBDataTable } from 'mdbreact';
 import './Paciente.css'
 import { Table, TableBody, TableHead  } from 'mdbreact'
 import ModalCadastraPaciente from './ModalCadastraPaciente'
 import api from './PacienteServer.js';
 import ModalConsultaPaciente from './ModalConsultaPaciente'
+
 class Paciente extends Component {
 
     state = {
@@ -23,7 +22,7 @@ class Paciente extends Component {
         return (
             <div> 
                 <ModalCadastraPaciente/>
-                <Table small reponsive maxHeight bordered hover id="tabelaPacientes">
+                <Table small reponsive maxHeight hover id="tabelaPacientes">
                     <TableHead>
                         <tr>
                             <th>Nome</th>

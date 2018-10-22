@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Input, Button, Fa, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-import axios from 'axios';
+import { Col, Input, Button, Modal, ModalBody } from 'mdbreact';
 import api from './PacienteServer.js';
 
  class ModalCadastraPaciente extends Component {

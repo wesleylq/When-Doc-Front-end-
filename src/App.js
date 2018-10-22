@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import LoginPage from './login/LoginPage';
 import NavBar from './menu/NavBar.js'
 import Paciente from './paciente/Paciente.js'

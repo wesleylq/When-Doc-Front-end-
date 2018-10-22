@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
+import { Button, Modal, ModalBody } from 'mdbreact';
 import TabsConsultaPaciente from './TabsConsultaPaciente'
 
 class ModalConsultaPaciente extends Component {

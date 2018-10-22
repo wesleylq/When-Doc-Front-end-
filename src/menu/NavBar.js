@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink} from 'mdbreact';
 import './NavBar.css'
-import { Link, Switch, Route } from 'react-router-dom';
-class NavBar extends React.Component {
+import { Link } from 'react-router-dom';
+import logo from '../logo.jpg';
+
+class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,8 +22,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <Navbar id='navbar' dark expand="md" scrolling>
-                <NavbarBrand href="/menu">
-                    <i className="fa fa-heartbeat" aria-hidden="true"></i> <strong> When,Doc</strong>
+                <NavbarBrand href="/menu">when,doc
                 </NavbarBrand>
                 { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
                 <Collapse isOpen = { this.state.collapse } navbar>
