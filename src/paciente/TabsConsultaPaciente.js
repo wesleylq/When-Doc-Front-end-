@@ -24,5 +24,3 @@ const TabsConsultaPaciente = (props) => {
 }
 
 export default TabsConsultaPaciente;
-
-
