@@ -1,5 +1,7 @@
 import React from 'react';
 import Perfil from './perfil/Perfil.js'
+import Historico from './historico/Historico.js'
+
 const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
