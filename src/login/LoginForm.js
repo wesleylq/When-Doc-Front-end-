@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
 
       validateUser = (loginId,loginPass) => {
         for (var user of this.state.users) {
-            if(loginId == user.id && loginPass == user.pass){
+            if(loginId === user.id && loginPass === user.pass){
                 return true
             }
           }
@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
         return (
             
     <div>    
-        <div className="container">
+        <div className="container" id= "login">
             <div id="login-row" className="row justify-content-center align-items-center">
                 <div id="login-column" className="col-md-6">
                 <Card>                

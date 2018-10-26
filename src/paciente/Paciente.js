@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Paciente.css'
 import { Table, TableBody, TableHead  } from 'mdbreact'
 import ModalCadastraPaciente from './ModalCadastraPaciente'
-import api from './PacienteServer.js';
+import api from '../Api';
 import ModalConsultaPaciente from './ModalConsultaPaciente'
 
 class Paciente extends Component {

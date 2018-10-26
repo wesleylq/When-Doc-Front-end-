@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Input, Button, Modal, ModalBody } from 'mdbreact';
-import api from './PacienteServer.js';
+import api from '../Api'
 
  class ModalCadastraPaciente extends Component {
  constructor(props) {

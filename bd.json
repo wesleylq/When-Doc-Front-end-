@@ -24,5 +24,27 @@
       "cpf": "78567564",
       "id": 3
     }
-  ]
+  ],
+  "users": [
+    {
+      "id": 1,
+      "pass": 25,
+      "name": "wes",
+      "cpf": 123456789,
+      "crm": 2555,
+      "expertise": "cardio",
+      "email": "wes@email.com",
+      "phone": 99999999
+    },
+    {
+      "pass": "fer00",
+      "id": "0108",
+      "name": "fer sil al",
+      "cpf": "987654",
+      "crm": "5555",
+      "expertise": "farm",
+      "email": "fer@email.com",
+      "phone": "3225178"
+    }
+]
 }
