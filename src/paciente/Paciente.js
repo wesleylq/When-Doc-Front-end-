@@ -20,9 +20,9 @@ class Paciente extends Component {
 
       render() {
         return (
-            <div> 
+            <div>
                 <ModalCadastraPaciente/>
-                <Table small reponsive maxHeight hover id="tabelaPacientes">
+                <Table responsive small hover id="tabelaPacientes">
                     <TableHead>
                         <tr>
                             <th>Nome</th>
@@ -33,11 +33,11 @@ class Paciente extends Component {
                     </TableHead>
                     <TableBody>
                        { this.state.pacientes.map(paciente =>
-                            <tr> 
+                            <tr>
                                 <td>{paciente.nome}</td>
                                 <td>{paciente.email}</td>
                                 <td>{paciente.cpf}</td>
-                                <td> <ModalConsultaPaciente teste={paciente.id}/> </td>
+                                <td> <ModalConsultaPaciente nome={paciente.nome} cpf={paciente.cpf} email={paciente.email}/> </td>
                             </tr>)}
                     </TableBody>
                 </Table>
@@ -47,4 +47,3 @@ class Paciente extends Component {
 }
 
 export default Paciente
-

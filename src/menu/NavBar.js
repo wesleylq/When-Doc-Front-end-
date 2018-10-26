@@ -4,6 +4,7 @@ import './NavBar.css'
 import { Link, Switch, Route } from 'react-router-dom';
 import logo from '../logo.jpg';
 import Paciente from '../paciente/Paciente.js'
+import MeuPerfil from '../meuPerfil/MeuPerfil.js'
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +30,7 @@ class NavBar extends Component {
                     <Collapse isOpen = { this.state.collapse } navbar>
                         <NavbarNav left id="navbar">
                             <NavItem>
-                                <NavLink to="#">Meu Perfil</NavLink>
+                                <Link className="nav-link" to="/menu/meuPerfil">Meu Perfil</Link>
                             </NavItem>
                             <NavItem>
                                 <Link className="nav-link" to="/menu/paciente">Pacientes</Link>
@@ -43,6 +44,7 @@ class NavBar extends Component {
                     </Collapse>
                 </Navbar>
                 <Switch>
+                    <Route path = '/menu/meuPerfil' component = {MeuPerfil}/>
                     <Route path = '/menu/paciente' component = {Paciente}/>
                 </Switch>
             </div>
