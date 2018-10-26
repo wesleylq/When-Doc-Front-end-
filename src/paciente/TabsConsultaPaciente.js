@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Perfil from './perfil/Perfil.js'
 const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
@@ -15,7 +15,7 @@ const TabsConsultaPaciente = (props) => {
 				</li>
 			</ul>
 			<div className="tab-content" id="myTabContent">
-				<div className="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab">1</div>
+				<div className="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="perfil-tab"> <Perfil nome ={props.nome} cpf={props.cpf} email={props.email}/> </div>
 				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab">2</div>
 				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab">3</div>
 			</div>

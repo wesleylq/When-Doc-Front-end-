@@ -17,7 +17,7 @@ handleSubmit = event => {
     email: this.state.email,
     cpf: this.state.cpf
 
-  } 
+  }
     api.savePatient(newPatient).then(res => {
       console.log(res);
       console.log(res.data);

@@ -17,6 +17,12 @@
       "email": "michelle@gmail.com",
       "cpf": "123456789",
       "id": 2
+    },
+    {
+      "nome": "lucasdd",
+      "email": "lucas@gmail",
+      "cpf": "78567564",
+      "id": 3
     }
   ]
 }
