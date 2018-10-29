@@ -6,15 +6,15 @@ import Prescription from './prescription/Prescription.js';
 const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
-	  		<ul className="nav nav-tabs" id="myTab" role="tablist">
+	  		<ul className="nav peach-gradient lighten-3 py-3 mb-3 font-weight-bold z-depth-1" id="myTab" role="tablist">
 			  	<li className="nav-item">
-			    	<a className="nav-link active" id="perfil-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true">perfil</a>
+			    	<a className="nav-link active" id="tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true">perfil</a>
 			 	</li>
 			  	<li className="nav-item">
-			   		<a className="nav-link" id="historico-tab" data-toggle="tab" href="#historico" role="tab" aria-controls="historico" aria-selected="false">historico</a>
+			   		<a className="nav-link" id="tab" data-toggle="tab" href="#historico" role="tab" aria-controls="historico" aria-selected="false">historico</a>
 			  	</li>
 			  	<li className="nav-item">
-				    <a className="nav-link" id="receituario-tab" data-toggle="tab" href="#receituario" role="tab" aria-controls="receituario" aria-selected="false">receituario</a>
+				    <a className="nav-link" id="tab" data-toggle="tab" href="#receituario" role="tab" aria-controls="receituario" aria-selected="false">receituario</a>
 				</li>
 			</ul>
 			<div className="tab-content" id="myTabContent">
