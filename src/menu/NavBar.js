@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink} from 'mdbreact';
 import './NavBar.css'
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '../logo.jpg';
 import Router from '../Router.js';
 
