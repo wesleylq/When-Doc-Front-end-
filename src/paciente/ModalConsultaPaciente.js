@@ -22,7 +22,22 @@ class ModalConsultaPaciente extends Component {
         <Button size="sm" onClick={this.toggle}>Consultar</Button>
         <Modal size ="lg" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
-            <TabsConsultaPaciente nome={this.props.nome} cpf={this.props.cpf} email={this.props.email}/>
+            <TabsConsultaPaciente
+                        nome={this.props.nome}
+                        cpf={this.props.cpf}
+                        email={this.props.email}
+                        emailSec={this.props.emailSec}
+                        telefone={this.props.telefone}
+                        telefoneSec={this.props.telefoneSec}
+                        tipoSanguineo={this.props.tipoSanguineo}
+                        rua={this.props.rua}
+                        bairro={this.props.bairro}
+                        numero={this.props.numero}
+                        complemento={this.props.complemento}
+                        cidade={this.props.cidade}
+                        pais={this.props.pais}
+                        cep={this.props.cep}
+                        />
             <Button size="sm" color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
           </ModalBody>
         </Modal>
