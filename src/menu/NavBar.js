@@ -3,8 +3,8 @@ import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLi
 import './NavBar.css'
 import { Link, Switch, Route } from 'react-router-dom';
 import logo from '../logo.jpg';
-import Paciente from '../paciente/Paciente.js'
-import MeuPerfil from '../meuPerfil/MeuPerfil.js'
+import Router from '../Router.js';
+
 class NavBar extends Component {
     constructor(props) {
         super(props);
@@ -43,10 +43,8 @@ class NavBar extends Component {
                         </NavbarNav>
                     </Collapse>
                 </Navbar>
-                <Switch>
-                    <Route path = '/menu/meuPerfil' component = {MeuPerfil}/>
-                    <Route path = '/menu/paciente' component = {Paciente}/>
-                </Switch>
+
+               <Router/>
             </div>
         );
     }
