@@ -37,7 +37,26 @@ class Paciente extends Component {
                                 <td>{paciente.nome}</td>
                                 <td>{paciente.email}</td>
                                 <td>{paciente.cpf}</td>
-                                <td> <ModalConsultaPaciente nome={paciente.nome} cpf={paciente.cpf} email={paciente.email}/> </td>
+                                <td> <ModalConsultaPaciente
+                                                nome={paciente.nome}
+                                                cpf={paciente.cpf}
+                                                email={paciente.email}
+                                                emailSec={paciente.emailSec}
+                                                telefone={paciente.telefone}
+                                                telefoneSec={paciente.telefoneSec}
+                                                tipoSanguineo={paciente.tipoSanguineo}
+                                                rua={paciente.endereco.rua}
+                                                bairro={paciente.endereco.bairro}
+                                                numero={paciente.endereco.numero}
+                                                complemento={paciente.endereco.complemento}
+                                                cidade={paciente.endereco.cidade}
+                                                pais={paciente.endereco.pais}
+                                                cep={paciente.endereco.cep}
+                                                />
+
+
+
+                                                 </td>
                             </tr>)}
                     </TableBody>
                 </Table>
