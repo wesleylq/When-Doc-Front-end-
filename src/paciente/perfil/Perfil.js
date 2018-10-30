@@ -1,6 +1,5 @@
 import React from 'react';
-import './Perfil.css'
-import { Button } from 'mdbreact';
+import './Perfil.css';
 
 const Perfil = (props) => {
   return (
