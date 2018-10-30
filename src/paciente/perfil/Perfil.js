@@ -5,18 +5,18 @@ import { Button } from 'mdbreact';
 const Perfil = (props) => {
   return (
       <section id='perfilPaciente'>
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="pills-tab" data-toggle="pill" href="#pills-dados-paciente" role="tab"
+        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li className="nav-item">
+            <a className="nav-link active" id="pills-tab" data-toggle="pill" href="#pills-dados-paciente" role="tab"
               aria-controls="pills-home" aria-selected="true">Dados Paciente</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="pills-tab" data-toggle="pill" href="#pills-endereco-paciente" role="tab"
+          <li className="nav-item">
+            <a className="nav-link" id="pills-tab" data-toggle="pill" href="#pills-endereco-paciente" role="tab"
               aria-controls="pills-profile" aria-selected="false">Endereco Paciente</a>
           </li>
         </ul>
-        <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-dados-paciente" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div className="tab-content pt-2 pl-1" id="pills-tabContent">
+          <div className="tab-pane fade show active" id="pills-dados-paciente" role="tabpanel" aria-labelledby="pills-home-tab">
               <p><strong>Nome: {props.nome}</strong></p>
               <p><strong>Cpf: {props.email}</strong></p>
               <p><strong>Email: {props.cpf}</strong></p>
@@ -25,7 +25,7 @@ const Perfil = (props) => {
               <p><strong>telefoneSec: {props.telefoneSec}</strong></p>
               <p><strong>tipoSanguineo: {props.tipoSanguineo}</strong></p>
           </div>
-          <div class="tab-pane fade" id="pills-endereco-paciente" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div className="tab-pane fade" id="pills-endereco-paciente" role="tabpanel" aria-labelledby="pills-profile-tab">
               <p><strong>rua: {props.rua}</strong></p>
               <p><strong>bairro: {props.bairro}</strong></p>
               <p><strong>numero: {props.numero}</strong></p>
