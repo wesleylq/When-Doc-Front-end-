@@ -6,7 +6,7 @@ import Prescription from './prescription/Prescription.js';
 const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
-	  		<ul className="nav peach-gradient lighten-3 py-3 mb-3 font-weight-bold z-depth-1" id="myTab" role="tablist">
+	  		<ul className="nav peach-gradient nav-justified lighten-3 py-3 mb-3 font-weight-bold z-depth-1" id="myTab" role="tablist">
 			  	<li className="nav-item">
 			    	<a className="nav-link active" id="tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true">perfil</a>
 			 	</li>
@@ -35,9 +35,9 @@ const TabsConsultaPaciente = (props) => {
                     cep={props.cep}
                     />
         </div>
-				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab">2</div>
+				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab"><Historico/></div>
 				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription/></div>
-			</div>      
+			</div>
 		</div>
     );
 }
