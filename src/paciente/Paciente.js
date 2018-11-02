@@ -32,8 +32,8 @@ class Paciente extends Component {
                         </tr>
                     </TableHead>
                     <TableBody>
-                       { this.state.pacientes.map(paciente =>
-                            <tr>
+                       { this.state.pacientes.map( (paciente,index) =>
+                            <tr key={index}>
                                 <td>{paciente.nome}</td>
                                 <td>{paciente.email}</td>
                                 <td>{paciente.cpf}</td>
@@ -53,10 +53,7 @@ class Paciente extends Component {
                                                 pais={paciente.endereco.pais}
                                                 cep={paciente.endereco.cep}
                                                 />
-
-
-
-                                                 </td>
+                                </td>
                             </tr>)}
                     </TableBody>
                 </Table>
