@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter, Row, Col, Input } from 'mdbreact';
+import {  Button, Modal, ModalBody, ModalHeader, Row, Col, Input } from 'mdbreact';
 import api from '../Api'
 
 
@@ -134,7 +134,7 @@ class LoginModal extends React.Component {
                     
                     <div className="form-check my-4">
                       <input className="form-check-input" type="checkbox" id="defaultCheck12" />
-                      <label htmlFor="defaultCheck12" className="grey-text">Aceito os<a href="#" className="blue-text"> Termos e condições</a></label>
+                      <label htmlFor="defaultCheck12" className="grey-text">Aceito os<a href="" className="blue-text"> Termos e condições</a></label>
                     </div>
                     <Button color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(3)}>voltar</Button>
                     <Button color="success" rounded className="float-right" onClick={this.handleSubmission}>Feito!</Button>

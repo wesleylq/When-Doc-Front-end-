@@ -6,7 +6,7 @@ const Perfil = (props) => {
   return (
       <Card>
           <div className="tab_container">
-            <input id="tabDadosPaciente" type="radio" name="tabs" aria-selected="true"/>
+            <input id="tabDadosPaciente" type="radio" name="tabs" defaultChecked/>
             <label id="tab" htmlFor="tabDadosPaciente"><i className="fa fa-folder-open-o"></i><span>Dados Paciente</span></label>
 
             <input id="tabEnderecoPaciente" type="radio" name="tabs"/>

@@ -29,7 +29,7 @@ class Prescription extends React.Component {
       }
 
       handleRemove(med){        
-        var array = this.state.meds.filter(function(s) { return s != med });
+        var array = this.state.meds.filter(function(s) { return s !== med });
         this.setState({meds: array });        
      }
 
@@ -49,10 +49,10 @@ class Prescription extends React.Component {
                 <div className="col-sm-12 ">
                 <div className= "card-body"><legend align="center">{this.props.nome}</legend></div>                                               
                             <div className="tab_container">
-                                <input id="tab1" type="radio" name="tabs" defaultChecked/>
+                                <input id="tab1" type="radio" name="tabs3" defaultChecked/>
                                 <label id="tab" htmlFor="tab1"><i className="test fa fa-code"></i><span>Diagnosticar</span></label>
 
-                                <input id="tab2" type="radio" name="tabs" />
+                                <input id="tab2" type="radio" name="tabs3" />
                                 <label id="tab" htmlFor="tab2"><i className="test fa fa-pencil-square-o"></i><span>Prescrever Medicamentos</span></label>
 
                                 <section id="content1" className="tab_content">

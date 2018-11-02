@@ -2,7 +2,7 @@ import React from 'react';
 import './LoginForm.css'
 import api from '../Api'
 
-import { Row, Input, Button, Card, CardBody, Footer } from 'mdbreact';
+import { Row, Input, Button, Card, CardBody } from 'mdbreact';
 import LoginModal from './LoginModal';
 import { withRouter } from "react-router-dom";
 
