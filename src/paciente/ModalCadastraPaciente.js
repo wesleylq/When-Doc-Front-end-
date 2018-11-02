@@ -56,9 +56,7 @@ toggle() {
 render() {
   return (
     <div id='modalCadastraPaciente'>
-      <Button size="sm" className="button circle button-energized ion-paper-airplane" onClick={this.toggle}>
-       <i id='iconeButtonCadastrarPaciente' className="fa fa-user-plus" aria-hidden="true"></i>
-      </Button>
+      <i onClick={this.toggle} id='iconeButtonCadastrarPaciente' className="navbar-toggler fa fa-user-plus" aria-hidden="true"></i>
       <Modal isOpen={this.state.modal} toggle={this.toggle} size="lg">
         <ModalBody>
           <Col md="12">
