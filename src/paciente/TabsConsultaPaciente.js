@@ -36,7 +36,7 @@ const TabsConsultaPaciente = (props) => {
 		                    />
         		</div>
 				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab"><Historico/></div>
-				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription/></div>
+				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription nome ={props.nome}/></div>
 			</div>
 		</div>
     );
