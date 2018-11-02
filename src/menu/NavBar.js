@@ -23,7 +23,7 @@ class NavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar id='navbar' dark expand="md" scrolling>
+                <Navbar id='navbar' dark expand="md" fixed='top' scrolling>
                     <NavbarBrand href="/menu">when,doc
                     </NavbarBrand>
                     { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}

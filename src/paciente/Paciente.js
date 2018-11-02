@@ -20,7 +20,7 @@ class Paciente extends Component {
 
       render() {
         return (
-            <div>
+            <div id='sectionNavBar'>
                 <ModalCadastraPaciente/>
                 <Table responsive small hover id="tabelaPacientes">
                     <TableHead>
