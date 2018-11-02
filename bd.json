@@ -1,4 +1,12 @@
 {
+  "medico": {
+    "nome": "lucas venancio duarte",
+    "especialidade": "traumas",
+    "cpf": 123456789,
+    "crm": 43897583457,
+    "email": "lucasduarte234@gmail.com",
+    "telefone": "981137916"
+  },
   "paciente": [
     {
       "nome": "lucas",
@@ -44,7 +52,7 @@
   ],
   "users":[
     {
-      
+
     }
 
   ]
