@@ -1,8 +1,9 @@
 import React from 'react';
 import './LoginForm.css'
 import api from '../Api'
+import logo from './whendoc-logo.jpg'
 
-import { Row, Input, Button, Card, CardBody, toast, ToastContainer  } from 'mdbreact';
+import { Input, Button, Card, CardBody, toast, ToastContainer,CardImage  } from 'mdbreact';
 import LoginModal from './LoginModal';
 import { withRouter } from "react-router-dom";
 
@@ -52,13 +53,12 @@ class LoginForm extends React.Component {
         return (
             
     <div> <ToastContainer position="top-center"  hideProgressBar  />  
-        <div className="container" id= "login">
+        <div  className="container" id= "login">
             <div id="login-row" className="row justify-content-center align-items-center">
                 <div id="login-column" className="col-md-6">
                 <Card>
-                  <Row className="d-flex justify-content-center">
-                    <h3 className="Black-text mb-3 pt-3 font-weight-bold">When, doc?</h3>
-                  </Row>
+                <CardImage cascade className="img-fluid" src={logo} />
+                                 
 
                 <CardBody className="mx-4 mt-4">
                 <form>
