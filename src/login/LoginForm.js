@@ -33,8 +33,8 @@ class LoginForm extends React.Component {
                 hideProgressBar: true        
               });
           }
-          
-         
+
+
       }
 
       validateUser = (email,senha) => {
@@ -46,8 +46,8 @@ class LoginForm extends React.Component {
           }
           return false
       }
-    
-    
+
+
     render() {
         return (
             
@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
         <div className="container" id= "login">
             <div id="login-row" className="row justify-content-center align-items-center">
                 <div id="login-column" className="col-md-6">
-                <Card>                
+                <Card>
                   <Row className="d-flex justify-content-center">
                     <h3 className="Black-text mb-3 pt-3 font-weight-bold">When, doc?</h3>
                   </Row>
@@ -71,20 +71,18 @@ class LoginForm extends React.Component {
                     <p className="text-center">Ou</p>
                     <LoginModal text = "Cadastre-se!"/>
                   </div>
-                                   
+
                 </CardBody>
               </Card>
                 </div>
             </div>
         </div>
     </div>
-    
 
-      
+
+
         );
     }
 }
 
 export default withRouter(LoginForm);
-
-

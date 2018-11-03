@@ -3,12 +3,11 @@
 	max-height: 90%;
 	margin-left: auto;
  	margin-right: auto;
-    margin-top: 1%;
+  margin-top: 1%;
 }
 
-
 #iconeButtonCadastrarPaciente {
-	font-size: 38px;
+		font-size: 38px;
   	background-color: white;
   	color: #17baa4;
   	border-radius: 100%;
@@ -19,9 +18,7 @@
 }
 
 #modalCadastraPaciente {
-	position: relative;
-	margin-top: 2%;
-	margin-left: 75%;
+	margin-left: 73%;
 }
 
 #myTab {

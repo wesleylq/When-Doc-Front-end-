@@ -1,9 +1,10 @@
 #navbar {
 	padding-left : 11px;
+	background-color: #17baa4;
 	font-size: 20px;
+	font-weight: 500;
 }
 
-#navbar {
-	background-color: #17baa4;
-	font-weight: 500;
+#navItem {
+	 padding-right: 21px;
 }
