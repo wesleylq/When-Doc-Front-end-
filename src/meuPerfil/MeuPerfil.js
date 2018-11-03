@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import api from '../Api';
 import './MeuPerfil.css';
 import EditDados from './EditDados.js';
-
 class MeuPerfil extends Component {
 
    state = {
