@@ -2,36 +2,45 @@ import React from 'react';
 import './LoginForm.css'
 import api from '../Api'
 
-import { Row, Input, Button, Card, CardBody } from 'mdbreact';
+import { Row, Input, Button, Card, CardBody, toast, ToastContainer  } from 'mdbreact';
 import LoginModal from './LoginModal';
 import { withRouter } from "react-router-dom";
 
 
 
 class LoginForm extends React.Component {
+
+    state = {
+        users: ""
+    }
     
-    componentDidMount(){
-        api.loadUsers().then((res) => {
-          console.log(res.data),
-          this.setState({users:res.data})}); 
-       
-      }
+    componentDidMount() {
+        api.loadUsers().then(res => {
+            const users = res.data;
+            this.setState({ users });
+        })
+    }
 
       handleLogin = () => {                   
           
-          if(this.validateUser(this.state.loginId,this.state.loginPass)){
+          if(this.validateUser(this.state.email,this.state.senha)){
             console.log("login!")
             this.props.history.push("/menu");
           }else{
-            console.log("Login invalido!") 
+            toast("Login Inaválido! Tente Novamente.", {                
+                autoClose: 3000, 
+                closeButton: false, 
+                hideProgressBar: true        
+              });
           }
           
          
       }
 
-      validateUser = (loginId,loginPass) => {
-        for (var user of this.state.users) {
-            if(loginId === user.id && loginPass === user.pass){
+      validateUser = (email,senha) => {
+          
+        for (var user of this.state.users) {            
+            if(email === user.email && senha === user.senha){
                 return true
             }
           }
@@ -42,7 +51,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             
-    <div>    
+    <div> <ToastContainer position="top-center"  hideProgressBar  />  
         <div className="container" id= "login">
             <div id="login-row" className="row justify-content-center align-items-center">
                 <div id="login-column" className="col-md-6">
@@ -52,9 +61,10 @@ class LoginForm extends React.Component {
                   </Row>
 
                 <CardBody className="mx-4 mt-4">
-                  <Input label="Seu usuário" group type="text" validate onChange={(value) => this.setState({loginId: value.target.value})} />
-                  <Input label="Sua senha" group type="password" validate containerClass="mb-0" onChange={(value) => this.setState({loginPass: value.target.value})}/>
-                  
+                <form>
+                  <Input label="Seu email" group type="email" required onChange={(value) => this.setState({email: value.target.value})} />
+                  <Input label="Sua senha" group type="password" required containerClass="mb-0" onChange={(value) => this.setState({senha: value.target.value})}/>
+                </form>
                   
                   <div className="text-center mb-4 mt-5">
                     <Button color="default" type="button" className="btn-block z-depth-2" onClick={this.handleLogin}>Entre</Button>

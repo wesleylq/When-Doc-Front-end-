@@ -22,7 +22,7 @@ class LoginModal extends React.Component {
       [modalNumber]: !this.state[modalNumber]
     });
     this.setState({formActivePanel1: 1})
-    this.setState({pass: null, id: null, name: null,cpf: null,expertise: null,email: null, phone: null})
+    this.setState({senha: null, nome: null,cpf: null,especialidade: null,email: null, telefone: null})
   }
 
   swapFormActive = (a) => (param) => (e) => {
@@ -50,14 +50,13 @@ class LoginModal extends React.Component {
     //falta validar!   
     if(true){
       const newUser = {
-        pass: this.state.pass,
-        id: this.state.id,
-        name: this.state.name,
+        senha: this.state.senha,        
+        nome: this.state.nome,
         cpf: this.state.cpf,
         crm: this.state.crm,
-        expertise: this.state.expertise,
+        especialidade: this.state.especialidade,
         email: this.state.email,
-        phone: this.state.phone
+        telefone: this.state.telefone
         
       }
       api.saveUser(newUser).then((res) => console.log(res))      
@@ -89,12 +88,11 @@ class LoginModal extends React.Component {
                       <strong>Informações Pessoais</strong></h3>
                     <Input label="CPF" className="mt-4" onChange={(value) => this.setState({cpf: value.target.value})} 
                     autoFocus={this.calculateAutofocus(1)}/>
-                    <Input label="Nome Completo" className="mt-4" onChange={(value) => this.setState({name: value.target.value})}/>
+                    <Input label="Nome Completo" className="mt-4" onChange={(value) => this.setState({nome: value.target.value})}/>
                     <Input label="Email" className="mt-4" onChange={(value) => this.setState({email: value.target.value})}/>
-                    <Input label="Telefone" className="mt-4" onChange={(value) => this.setState({phone: value.target.value})}/>
-                    <Input label="Código de usuário" className="mt-4" onChange={(value) => this.setState({id: value.target.value})}/>
-                    <Input label="Senha" className="mt-4" onChange={(value) => this.setState({pass: value.target.value})}/>
-                    <Input label="Repita a senha" className="mt-4" onChange= {(value) => this.setState({passVal: value.target.value})}/>
+                    <Input label="Telefone" className="mt-4" onChange={(value) => this.setState({telefone: value.target.value})}/>                    
+                    <Input label="Senha" className="mt-4" onChange={(value) => this.setState({senha: value.target.value})}/>
+                    <Input label="Repita a senha" className="mt-4" onChange= {(value) => this.setState({senhaVal: value.target.value})}/>
                       
                     <Button color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(2)}>próximo</Button>
                   </Col>)}
@@ -104,7 +102,7 @@ class LoginModal extends React.Component {
                     <h3 className="font-weight-bold pl-0 my-4"><strong>Informações Profissionais</strong></h3>
                     <Input label="CRM" className="mt-3" onChange={(value) => this.setState({crm: value.target.value})}
                     autoFocus={this.calculateAutofocus(1)}/>
-                    <Input label="Especialidade" className="mt-3" onChange={(value) => this.setState({expertise: value.target.value})}/>           
+                    <Input label="Especialidade" className="mt-3" onChange={(value) => this.setState({especialidade: value.target.value})}/>           
                     
                     <Button color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>voltar</Button>
                     <Button color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(3)}>próximo</Button>
