@@ -62,8 +62,8 @@ class LoginForm extends React.Component {
 
                 <CardBody className="mx-4 mt-4">
                 <form>
-                  <Input label="Seu email" group type="email" required onChange={(value) => this.setState({email: value.target.value})} />
-                  <Input label="Sua senha" group type="password" required containerClass="mb-0" onChange={(value) => this.setState({senha: value.target.value})}/>
+                  <Input label="Email" group type="email" required onChange={(value) => this.setState({email: value.target.value})} />
+                  <Input label="Senha" group type="password" required containerClass="mb-0" onChange={(value) => this.setState({senha: value.target.value})}/>
                 </form>
                   
                   <div className="text-center mb-4 mt-5">

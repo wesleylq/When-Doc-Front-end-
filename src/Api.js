@@ -11,6 +11,8 @@ const apis = {
      loadPatients: () => api.get('paciente'),
      loadDoctor: () => api.get('medico'),
      saveDoctor: (newDoctor) => api.put("/medico",newDoctor),
+     loadDiagnosticos: () => api.get('diagnosticos'),
+     loadMedicamentos: () => api.get('medicamentos')
 }
 
 export default apis;

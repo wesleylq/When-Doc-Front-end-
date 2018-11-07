@@ -93,8 +93,7 @@ class LoginModal extends React.Component {
                     <Input label="Telefone" className="mt-4" onChange={(value) => this.setState({telefone: value.target.value})}/>                    
                     <Input label="Senha" className="mt-4" onChange={(value) => this.setState({senha: value.target.value})}/>
                     <Input label="Repita a senha" className="mt-4" onChange= {(value) => this.setState({senhaVal: value.target.value})}/>
-                      
-                    <Button color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(2)}>próximo</Button>
+                    <Button rounded className="float-right" onClick={this.handleNextPrevClick(1)(2)}>próximo</Button>
                   </Col>)}
     
                   { this.state.formActivePanel1 === 2  &&
@@ -102,10 +101,8 @@ class LoginModal extends React.Component {
                     <h3 className="font-weight-bold pl-0 my-4"><strong>Informações Profissionais</strong></h3>
                     <Input label="CRM" className="mt-3" onChange={(value) => this.setState({crm: value.target.value})}
                     autoFocus={this.calculateAutofocus(1)}/>
-                    <Input label="Especialidade" className="mt-3" onChange={(value) => this.setState({especialidade: value.target.value})}/>           
-                    
-                    <Button color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(1)}>voltar</Button>
-                    <Button color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(3)}>próximo</Button>
+                    <Input label="Especialidade" className="mt-3" onChange={(value) => this.setState({especialidade: value.target.value})}/> 
+                    <Button rounded className="float-right" onClick={this.handleNextPrevClick(1)(3)}>próximo</Button>
                   </Col>)}
     
                   { this.state.formActivePanel1 === 3  &&
@@ -119,10 +116,7 @@ class LoginModal extends React.Component {
                     <Input label="CEP" className="mt-4" />
                     <Input label="Cidade" className="mt-4" />
                     <Input label="Estado" className="mt-4"/>
-                    
-                    
-                    <Button color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(2)}>voltar</Button>
-                    <Button color="mdb-color" rounded className="float-right" onClick={this.handleNextPrevClick(1)(4)}>próximo</Button>
+                    <Button rounded className="float-right" onClick={this.handleNextPrevClick(1)(4)}>próximo</Button>
                   </Col>)}
     
                   { this.state.formActivePanel1 === 4  &&
@@ -134,8 +128,7 @@ class LoginModal extends React.Component {
                       <input className="form-check-input" type="checkbox" id="defaultCheck12" />
                       <label htmlFor="defaultCheck12" className="grey-text">Aceito os<a href="" className="blue-text"> Termos e condições</a></label>
                     </div>
-                    <Button color="mdb-color" rounded className="float-left" onClick={this.handleNextPrevClick(1)(3)}>voltar</Button>
-                    <Button color="success" rounded className="float-right" onClick={this.handleSubmission}>Feito!</Button>
+                    <Button color="primary" rounded className="float-right" onClick={this.handleSubmission}>Feito!</Button>
                   </Col>)}
               </Row>
             </form>
