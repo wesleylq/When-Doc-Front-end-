@@ -10,13 +10,16 @@ import api from '../Api';
     modal: false
   }
   this.toggle = this.toggle.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-handleSubmit = event => {
+handleSubmit(){
+  console.log(this.state)
   const newPatient = {
     nome: this.state.nome,
     email: this.state.email,
-    cpf: this.state.cpf,
+    cpf:this.state.cpf,
+    senha: this.state.cpf,
     emailSec: this.state.emailSec,
     telefone: this.state.telefone,
     telefoneSec: this.state.telefoneSec,
@@ -40,11 +43,6 @@ handleSubmit = event => {
       console.log(res.data);
   })
 }
-
-submitHandler = (event) => {
-   event.preventDefault();
-   event.target.className += ' was-validated';
- }
 
 
 toggle() {
@@ -131,7 +129,7 @@ render() {
                     <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
                   </div>
                 </Row>
-                <Button color="mdb-color" type="submit" rounded >Cadastar</Button>
+                <Button color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
                 <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
               </div>
             </form>
