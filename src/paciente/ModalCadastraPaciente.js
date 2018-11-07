@@ -14,7 +14,6 @@ import api from '../Api';
 }
 
 handleSubmit(){
-  console.log(this.state)
   const newPatient = {
     nome: this.state.nome,
     email: this.state.email,
@@ -58,7 +57,7 @@ render() {
       <Modal isOpen={this.state.modal} toggle={this.toggle} size="lg">
         <ModalBody>
           <Col md="12">
-            <form className='needs-validation' onSubmit={this.handleSubmit}>
+            <form className='needs-validation'>
               <p className="h5 text-center">Cadastrar Paciente</p>
               <div className="grey-text">
                 <Row>
@@ -129,7 +128,7 @@ render() {
                     <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
                   </div>
                 </Row>
-                <Button color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
+                <Button color="mdb-color" type="submit" onClick={this.handleSubmit}>Cadastar</Button>
                 <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
               </div>
             </form>
