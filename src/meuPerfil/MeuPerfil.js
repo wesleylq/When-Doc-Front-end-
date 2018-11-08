@@ -21,8 +21,11 @@ class MeuPerfil extends Component {
           <section className="team-section text-center my-5">
             <div className="jumbotron text-center">
                 <EditDados nome={this.state.medico.nome}
+                            especialidade={this.state.medico.especialidade}
                             cpf={this.state.medico.cpf}
-                            crm={this.state.medico.crm}/>
+                            crm={this.state.medico.crm}
+                            email={this.state.medico.email}
+                            telefone={this.state.medico.telefone}/>
                 <h2 className="card-title h2">{this.state.medico.nome}</h2>
                 <p className="text my-4">{this.state.medico.especialidade}</p>
                 <div className="row d-flex justify-content-center">

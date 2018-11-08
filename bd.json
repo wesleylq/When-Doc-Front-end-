@@ -1,9 +1,11 @@
 {
   "medico": {
     "nome": "lucas venancio duarte",
-    "especialidade": "traumas",
+    "especialidade": "fraturas",
     "cpf": 123456789,
-    "crm": 43897583457
+    "crm": 43897583457,
+    "email": "lucas@gmail.com",
+    "telefone": "9847598475"
   },
   "paciente": [
     {
@@ -51,31 +53,29 @@
   "users": [
     {}
   ],
-  
-  "diagnosticos":[
+  "diagnosticos": [
     {
-    "nomeDiagnostico": "Virose"
+      "nomeDiagnostico": "Virose"
     },
     {
-      "nomeDiagnostico": "Gripe" 
+      "nomeDiagnostico": "Gripe"
     }
   ],
-  
-  "medicamentos":[
+  "medicamentos": [
     {
       "nome": "buscopan",
-      "dosagem":"20mg",
-      "intervalo":8
+      "dosagem": "20mg",
+      "intervalo": 8
     },
     {
       "nome": "dorflex",
-      "dosagem":"5mg",
-      "intervalo":12
+      "dosagem": "5mg",
+      "intervalo": 12
     },
     {
       "nome": "redoxon",
-      "dosagem":"1mg",
-      "intervalo":5
+      "dosagem": "1mg",
+      "intervalo": 5
     }
   ]
 }

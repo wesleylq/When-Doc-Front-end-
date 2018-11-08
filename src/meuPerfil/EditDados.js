@@ -10,23 +10,45 @@ class MeuPerfil extends React.Component {
       modal14: false,
       medico: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.novasInformacoes = this.novasInformacoes.bind(this);
   }
 
-handleSubmit = event => {
-  const newDoctor = {
-    nome: this.props.nome,
-    especialidade : this.state.especialidade,
-    cpf : this.props.cpf,
-    crm : this.props.crm,
-    email: this.state.email,
-    telefone: this.state.telefone,
+handleSubmit = () => {
+    const novaInfo = this.novasInformacoes(this.state.especialidade, this.state.email, this.state.telefone);
+    const newDoctor = {
+      nome: this.props.nome,
+      especialidade : novaInfo.novaEspecialidade,
+      cpf : this.props.cpf,
+      crm : this.props.crm,
+      email: novaInfo.novoEmail,
+      telefone: novaInfo.novoTelefone
 
-  }
+    }
     api.saveDoctor(newDoctor).then(res => {
-      console.log(res);
-      console.log(res.data);
-  })
+        console.log(res);
+        console.log(res.data);
+    })
+
 }
+
+  novasInformacoes = (especialidade, email, telefone) => { 
+    var info = {
+      novaEspecialidade : this.props.especialidade,
+      novoEmail : this.props.email,
+      novoTelefone : this.props.telefone
+    }
+    if(especialidade !== undefined) {
+      info.novaEspecialidade = especialidade;
+    }
+    if(email !== undefined) {
+      info.novoEmail = email;
+    }
+    if(telefone !== undefined) {
+      info.novoTelefone = telefone;
+    }
+    return info;
+  }
 
 
   toggle(nr) {
@@ -41,15 +63,14 @@ handleSubmit = event => {
       <div>
         <i onClick={() => this.toggle(14)} id='iconeButtonConfiguracaoMedico' className="navbar-toggler fa fa-cog" aria-hidden="true"></i>
         <Modal isOpen={this.state.modal14} toggle={() => this.toggle(14)} centered>
-          <form className="mx-3 grey-text" onSubmit={this.handleSubmit}>
+          <form className="mx-3 grey-text">
             <ModalBody>
                 <p className="h5 text-center">Atualizar Informações</p>
-                <Input type="text" onChange={(value) => this.setState({especialidade: value.target.value})} label="especialidade"/>
-                <Input type="email" onChange={(value) => this.setState({email: value.target.value})} label="email"/>
-                <Input type="text" onChange={(value) => this.setState({telefone: value.target.value})}  label="telefone" />
+                <Input type="text" onChange={(value) => this.setState({especialidade: value.target.value})} label="nova especialidade"/>
+                <Input type="email" onChange={(value) => this.setState({email: value.target.value})} label="novo email"/>
+                <Input type="text" onChange={(value) => this.setState({telefone: value.target.value})}  label="novo telefone" />
             </ModalBody>
-
-            <Button color="mdb-color" type="submit" rounded >Atualizar</Button>
+            <Button color="mdb-color" type="submit" onClick={this.handleSubmit} >Atualizar</Button>
             <Button color="secondary" onClick={() => this.toggle(14)} className="float-right">Sair</Button>
           </form>
         </Modal>
