@@ -11,8 +11,12 @@ const Auth = {
     },
     getAuthenticate(){
         let user = localStorage.getItem('cb');
-        
-         return user;
+        if(user){
+          return true;
+        }else{
+          return false
+        }
+         
          
      }
 

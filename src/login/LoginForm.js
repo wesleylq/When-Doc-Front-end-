@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
             
         })
 
-        setTimeout(() =>{if(Auth.getAuthenticate()){            
+        setTimeout(() =>{if(Auth.getAuthenticate()){
             this.props.history.push("/menu");
           }else{
             toast("Login Inaválido! Tente Novamente.", {                

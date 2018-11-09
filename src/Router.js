@@ -4,12 +4,13 @@ import Paciente from './paciente/Paciente.js';
 import MeuPerfil from './meuPerfil/MeuPerfil.js';
 import Auth from "./login/Auth";
 import Navbar from './menu/NavBar.js';
+import NavBar from './menu/NavBar.js';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
       {...rest}
       render={props =>
-        false ? (
+        Auth.getAuthenticate() ? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: "/", state: { from: props.location } }} />
@@ -20,14 +21,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   
 const Router = () => {
     return (
-        <BrowserRouter>
-            <Switch>                
-                <Route path = '/menu/meuPerfil' component = {MeuPerfil}/>
-                <Route path = '/menu/paciente' component = {Paciente}/>
-                PrivateRoute path = '/menu/' component = {Navbar}
-               
+       
+            <Switch> 
+                       
+                <PrivateRoute path = '/menu/meuPerfil' component = {MeuPerfil}/>
+                <PrivateRoute path = '/menu/paciente' component = {Paciente}/>
+    
             </Switch>
-        </BrowserRouter>
+       
         
     );
 }
