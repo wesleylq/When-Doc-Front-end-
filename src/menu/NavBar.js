@@ -4,6 +4,7 @@ import './NavBar.css'
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import Router from '../Router.js';
+import Auth from "../login/Auth";
 
 class NavBar extends Component {
     constructor(props) {
@@ -13,6 +14,12 @@ class NavBar extends Component {
             isWideEnough: false,
         };
     this.onClick = this.onClick.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    } 
+
+    handleLogout = () => {
+        Auth.signout()
+
     }
 
     onClick(){
@@ -39,7 +46,7 @@ class NavBar extends Component {
                         </NavbarNav>
                         <NavbarNav right >
                             <NavItem>
-                                <NavLink to="logaut">Sair</NavLink>
+                                <NavLink to="/" onClick={this.handleLogout} >Sair</NavLink>
                             </NavItem>
                         </NavbarNav>
                     </Collapse>

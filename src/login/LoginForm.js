@@ -8,25 +8,46 @@ import LoginModal from './LoginModal';
 import { withRouter } from "react-router-dom";
 import Auth from "./Auth";
 
-
-
 class LoginForm extends React.Component {
-
-    state = {
-        users: ""
-    }
-    
+    constructor(props) {
+        super(props);
+            this.state = {
+                 user: ""                        
+            }
+            this.handleLogin = this.handleLogin.bind(this);
+          }
+          
+  
+    /*
     componentDidMount() {
         api.loadUsers().then(res => {
             const users = res.data;
             this.setState({ users });
         })
-    }
+    }*/
 
-      handleLogin = () => {                   
+      handleLogin = () => {
           
-          if(this.validateUser(this.state.email,this.state.senha)){
-            Auth.authenticate();
+        const user = {
+            senha: this.state.senha,        
+            nome: null,
+            cpf: null,
+            crm: null,
+            especialidade: null,
+            email: this.state.email,
+            telefone: null
+            
+          }
+        
+         api.getDoctor(user).then(res => {
+            Auth.authenticate(res.data);
+            const user = res.data;
+            this.setState({ user });
+            
+            
+        })
+
+        setTimeout(() =>{if(Auth.getAuthenticate()){            
             this.props.history.push("/menu");
           }else{
             toast("Login Inaválido! Tente Novamente.", {                
@@ -34,9 +55,8 @@ class LoginForm extends React.Component {
                 closeButton: false, 
                 hideProgressBar: true        
               });
-          }
-
-
+          }}, 1000)
+           
       }
 
       validateUser = (email,senha) => {

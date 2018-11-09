@@ -6,8 +6,9 @@ const api = axios.create({
 
 
 const apis = {
-     saveUser: (newUser) => api.post("users",newUser),
-     loadUsers: () => api.get('users'),
+     //saveUser: (newUser) => api.post("users",newUser),
+     //loadUsers: () => api.get('users'),
+     getDoctor: (user) => api.post("medico/login/", user),
      savePatient: (newPatient) => api.post("/paciente/cadastrar",newPatient),
      loadPatients: () => api.get('paciente'),
      loadDoctor: () => api.get('medico'),
