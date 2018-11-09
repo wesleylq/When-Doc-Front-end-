@@ -6,6 +6,7 @@ import logo from './whendoc-logo.jpg'
 import { Input, Button, Card, CardBody, toast, ToastContainer,CardImage  } from 'mdbreact';
 import LoginModal from './LoginModal';
 import { withRouter } from "react-router-dom";
+import Auth from "./Auth";
 
 
 
@@ -25,7 +26,7 @@ class LoginForm extends React.Component {
       handleLogin = () => {                   
           
           if(this.validateUser(this.state.email,this.state.senha)){
-            console.log("login!")
+            Auth.authenticate();
             this.props.history.push("/menu");
           }else{
             toast("Login Inaválido! Tente Novamente.", {                
