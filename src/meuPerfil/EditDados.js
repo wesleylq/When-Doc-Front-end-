@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Modal, ModalBody, Input } from 'mdbreact';
 import './MeuPerfil.css';
 import api from '../Api';
+import Auth from "../login/Auth";
 
 class MeuPerfil extends React.Component {
   constructor(props) {
@@ -25,7 +26,9 @@ handleSubmit = () => {
       telefone: novaInfo.novoTelefone
 
     }
-    api.saveDoctor(newDoctor).then(res => {
+    console.log(Auth.getDoctor());
+    console.log(newDoctor);
+    api.saveDoctor(newDoctor,Auth.getDoctor()).then(res => {
         console.log(res);
         console.log(res.data);
     })
@@ -59,6 +62,7 @@ handleSubmit = () => {
   }
 
   render() {
+    //console.log(Auth.getDoctor);
     return (
       <div>
         <i onClick={() => this.toggle(14)} id='iconeButtonConfiguracaoMedico' className="navbar-toggler fa fa-cog" aria-hidden="true"></i>
@@ -70,7 +74,7 @@ handleSubmit = () => {
                 <Input type="email" onChange={(value) => this.setState({email: value.target.value})} label="novo email"/>
                 <Input type="text" onChange={(value) => this.setState({telefone: value.target.value})}  label="novo telefone" />
             </ModalBody>
-            <Button color="mdb-color" type="submit" onClick={this.handleSubmit} >Atualizar</Button>
+            <Button color="mdb-color" onClick={this.handleSubmit} >Atualizar</Button>
             <Button color="secondary" onClick={() => this.toggle(14)} className="float-right">Sair</Button>
           </form>
         </Modal>

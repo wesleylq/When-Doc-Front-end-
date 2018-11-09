@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import api from '../Api';
 import './MeuPerfil.css';
 import EditDados from './EditDados.js';
+import Auth from "../login/Auth";
+
 class MeuPerfil extends Component {
 
-   state = {
-        medico: ""
-    }
+  constructor(props) {
+    super(props);
+        this.state = {
+             medico: ""                        
+        }
+       
+      }
+      
     componentDidMount() {
-        api.loadDoctor()
+        api.loadDoctor(Auth.getDoctor())
         .then(res => {
             const medico = res.data;
             this.setState({ medico });

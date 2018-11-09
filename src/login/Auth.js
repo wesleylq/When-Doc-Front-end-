@@ -2,7 +2,7 @@ const Auth = {
     isAuthenticated: false,
     authenticate(cb) {
       this.isAuthenticated = true;
-      localStorage.setItem('cb', JSON.stringify(cb.cpf));
+      localStorage.setItem('cb', JSON.stringify(cb.crm));
         
     },
     signout() {
@@ -18,7 +18,13 @@ const Auth = {
         }
          
          
-     }
+     },
+
+     getDoctor(){
+      let user = localStorage.getItem('cb');
+      return user;
+         
+   }
 
   };
 
