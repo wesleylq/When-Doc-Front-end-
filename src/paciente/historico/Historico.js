@@ -21,17 +21,17 @@ class Historico extends React.Component {
           <label id="tab" htmlFor="tab5"><i className="test fa fa-pencil-square-o"></i><span>Medicamentos</span></label>
 
           <section id="content4" className="tab_content">
-            <DataTableDiagnostico />
+            <DataTableDiagnostico cpf={this.props.cpf}/>
           </section>
 
           <section id="content5" className="tab_content">
-            <DataTableMedicamentos />
+            <DataTableMedicamentos cpf={this.props.cpf} />
           </section>
 
         </div>
 
         </Card>
-      
+
     );
   }
 }
