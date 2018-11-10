@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Modal, ModalBody, Row} from 'mdbreact';
+import { Col, Button, Modal, ModalBody, Row, Card} from 'mdbreact';
 import Label from '../components/Label.js'
 import api from '../Api';
 
@@ -56,83 +56,101 @@ render() {
       <i onClick={this.toggle} id='iconeButtonCadastrarPaciente' className="navbar-toggler fa fa-user-plus" aria-hidden="true"></i>
       <Modal isOpen={this.state.modal} toggle={this.toggle} size="lg">
         <ModalBody>
-          <Col md="12">
-            <form className='needs-validation'>
-              <p className="h5 text-center">Cadastrar Paciente</p>
-              <div className="grey-text">
-                <Row>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Nome'/>
-                     <input name='nome' onChange={(value) => this.setState({nome: value.target.value})} type="text" id="defaultFormRegisterEmailEx2" className="form-control" placeholder="Nome" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Cpf'/>
-                    <input  name='cpf' onChange={(value) => this.setState({cpf: value.target.value})} type="number" id="defaultFormRegisterEmailEx2" className="form-control" placeholder="Cpf" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Tipo Sanguineo'/>
-                    <input onChange={(value) => this.setState({tipoSanguineo: value.target.value})} type="text" id="defaultFormRegisterConfirmEx3" className="form-control" name='tipoSanguineo' placeholder="tipoSanguineo" required/>
-                  </div>
-                </Row>
-                <Row>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Email'/>
-                    <input  onChange={(value) => this.setState({email: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Email Secundario'/>
-                    <input  onChange={(value) => this.setState({emailSec: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
-                  </div>
-                </Row>
-                <Row>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Telefone'/>
-                    <input onChange={(value) => this.setState({telefone: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Telefone 2'/>
-                    <input  name='telefone' onChange={(value) => this.setState({telefoneSec: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
-                  </div>
-                </Row>
-                <Row>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Rua'/>
-                    <input  onChange={(value) => this.setState({rua: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='rua' placeholder="Rua" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Bairro'/>
-                    <input onChange={(value) => this.setState({bairro: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='bairro' placeholder="Bairro" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Numero'/>
-                    <input onChange={(value) => this.setState({numero: value.target.value})} type="number" id="defaultFormRegisterPasswordEx4" className="form-control" name='numero' placeholder="Numero" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Complemento'/>
-                    <input  onChange={(value) => this.setState({complemento: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='complemento' placeholder="Complemento" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Cidade'/>
-                    <input onChange={(value) => this.setState({cidade: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cidade' placeholder="Cidade" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Estado'/>
-                    <input onChange={(value) => this.setState({estado: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='estado' placeholder="Estado" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Pais'/>
-                    <input  onChange={(value) => this.setState({pais: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='pais' placeholder="Pais" required/>
-                  </div>
-                  <div className="col-md-4 mb-3">
-                    <Label name='Cep'/>
-                    <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
-                  </div>
-                </Row>
-                <Button color="mdb-color" type="submit" onClick={this.handleSubmit}>Cadastar</Button>
-                <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
-              </div>
-            </form>
-          </Col>
+
+            <Card>
+                <div className="tab_container">
+                  <input id="tabCriarPacienteNovo" type="radio" name="tabs5" defaultChecked/>
+                  <label id="tab" htmlFor="tabCriarPacienteNovo"><i className="fa fa-folder-open-o"></i><span>Criar Paciente Novo</span></label>
+
+                  <input id="tabImportarNovoPaciente" type="radio" name="tabs5"/>
+                  <label id="tab" htmlFor="tabImportarNovoPaciente"><i className="fa fa-envelope-o"></i><span>Importar Novo Paciente</span></label>
+
+                  <section id="contentCriarPacienteNovo">
+
+                      <Col md="12">
+                        <form className='needs-validation'>
+                          <p className="h5 text-center">Cadastrar Paciente</p>
+                          <div className="grey-text">
+                            <Row>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Nome'/>
+                                 <input name='nome' onChange={(value) => this.setState({nome: value.target.value})} type="text" id="defaultFormRegisterEmailEx2" className="form-control" placeholder="Nome" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Cpf'/>
+                                <input  name='cpf' onChange={(value) => this.setState({cpf: value.target.value})} type="number" id="defaultFormRegisterEmailEx2" className="form-control" placeholder="Cpf" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Tipo Sanguineo'/>
+                                <input onChange={(value) => this.setState({tipoSanguineo: value.target.value})} type="text" id="defaultFormRegisterConfirmEx3" className="form-control" name='tipoSanguineo' placeholder="tipoSanguineo" required/>
+                              </div>
+                            </Row>
+                            <Row>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Email'/>
+                                <input  onChange={(value) => this.setState({email: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Email Secundario'/>
+                                <input  onChange={(value) => this.setState({emailSec: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
+                              </div>
+                            </Row>
+                            <Row>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Telefone'/>
+                                <input onChange={(value) => this.setState({telefone: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Telefone 2'/>
+                                <input  name='telefone' onChange={(value) => this.setState({telefoneSec: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
+                              </div>
+                            </Row>
+                            <Row>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Rua'/>
+                                <input  onChange={(value) => this.setState({rua: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='rua' placeholder="Rua" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Bairro'/>
+                                <input onChange={(value) => this.setState({bairro: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='bairro' placeholder="Bairro" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Numero'/>
+                                <input onChange={(value) => this.setState({numero: value.target.value})} type="number" id="defaultFormRegisterPasswordEx4" className="form-control" name='numero' placeholder="Numero" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Complemento'/>
+                                <input  onChange={(value) => this.setState({complemento: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='complemento' placeholder="Complemento" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Cidade'/>
+                                <input onChange={(value) => this.setState({cidade: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cidade' placeholder="Cidade" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Estado'/>
+                                <input onChange={(value) => this.setState({estado: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='estado' placeholder="Estado" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Pais'/>
+                                <input  onChange={(value) => this.setState({pais: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='pais' placeholder="Pais" required/>
+                              </div>
+                              <div className="col-md-4 mb-3">
+                                <Label name='Cep'/>
+                                <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
+                              </div>
+                            </Row>
+                            <Button color="mdb-color" type="submit" onClick={this.handleSubmit}>Cadastar</Button>
+                            <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
+                          </div>
+                        </form>
+                      </Col>
+
+                  </section>
+                  <section id="contentImportarNovoPaciente">
+
+                  </section>
+                </div>
+            </Card>
         </ModalBody>
       </Modal>
     </div>

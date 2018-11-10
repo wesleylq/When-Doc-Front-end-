@@ -9,12 +9,12 @@ class Prescription extends React.Component {
         super(props);
         this.state = {
             meds: []
-         };   
+         };
         this.handleAdd = this.handleAdd.bind(this) ;
-        this.handlePrescription = this.handlePrescription.bind(this) ; 
-         
+        this.handlePrescription = this.handlePrescription.bind(this) ;
+
     }
-   
+
 
     handleAdd = () => {
         const medicamento = {
@@ -25,7 +25,7 @@ class Prescription extends React.Component {
             quantidade: this.state.quantidade,
             DataInicial: this.state.dataInicial,
             DataFinal:this.state.dataFinal,
-            horario: "50"            
+            horario: null            
           }
           this.setState({
             meds: [...this.state.meds, medicamento]
@@ -33,9 +33,9 @@ class Prescription extends React.Component {
           this.myFormRef.reset();
       }
 
-      handleRemove(med){        
+      handleRemove(med){
         var array = this.state.meds.filter(function(s) { return s !== med });
-        this.setState({meds: array });        
+        this.setState({meds: array });
      }
 
      handlePrescription(){
@@ -43,33 +43,33 @@ class Prescription extends React.Component {
             nomeDiagnostico: this.state.nomeDiagnostico,
             descricao: this.state.descricao
         }
-        
+
         const medicamentos = this.state.meds;
-        
-             
-        api.addConsulta(diagnostico,this.props.crm,this.props.cpf).then(res => {      
+
+
+        api.addConsulta(diagnostico,this.props.crm,this.props.cpf).then(res => {
             const consulta = res.data;
-            console.log(medicamentos)            
+            console.log(medicamentos)
             api.saveMedicamentos(medicamentos,this.props.crm,this.props.cpf,consulta.id)
-            
+
 
           });
-        
-     
-        this.setState({meds: [] });    
+
+
+        this.setState({meds: [] });
         //window.location.reload();
      }
 
-     
 
-   
+
+
     render() {
         return (
           <Card>
-            <div className="container ">            
+            <div className="container ">
             <div className="row">
                 <div className="col-sm-12 ">
-                <div className= "card-body"><legend align="center">{this.props.nome}</legend></div>                                               
+                <div className= "card-body"><legend align="center">{this.props.nome}</legend></div>
                             <div className="tab_container">
                                 <input id="tab1" type="radio" name="tabs3" defaultChecked/>
                                 <label id="tab" htmlFor="tab1"><i className="fa fa-code"></i><span>Diagnosticar</span></label>
@@ -82,7 +82,7 @@ class Prescription extends React.Component {
                                         <div className="form-group">
                                             <label htmlFor="concept" className="control-label">Diagnostico</label>
                                             <div>
-                                                <input type="text" className="form-control" 
+                                                <input type="text" className="form-control"
                                                     onChange={(value) => this.setState({nomeDiagnostico: value.target.value})}/>
                                             </div>
                                         </div>
@@ -99,7 +99,7 @@ class Prescription extends React.Component {
                                 <section id="content2" className="tab_content">
                                 <div className="row">
                                 <div className="col-sm-6">
-                                        
+
                                         <div className="panel panel-default">
                                             <div className="panel-body form-horizontal">
                                             <form ref={(el) => this.myFormRef = el}>
@@ -108,7 +108,7 @@ class Prescription extends React.Component {
                                                     <div>
                                                         <input type="text" className="form-control"
                                                             onChange={(value) => this.setState({nome: value.target.value})}/>
-                                                    </div>                                                
+                                                    </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="description" className="control-label">Descrição</label>
@@ -120,80 +120,80 @@ class Prescription extends React.Component {
                                                 <div className="form-group">
                                                     <label htmlFor="amount" className=" col-sm-5 control-label">Dosagem (mg)</label>
                                                     <div className="col-sm-5">
-                                                        <input type="number" className="form-control" id="dose" name="dose" 
+                                                        <input type="number" className="form-control" id="dose" name="dose"
                                                          onChange={(value) => this.setState({dosagem: value.target.value})}/>
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="amount" className=" col-sm-5 control-label">Quantidade</label>
                                                     <div className="col-sm-5">
-                                                        <input type="number" className="form-control" id="amount" name="amount" 
+                                                        <input type="number" className="form-control" id="amount" name="amount"
                                                          onChange={(value) => this.setState({quantidade: value.target.value})}/>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div className="form-group">
                                                     <label htmlFor="amount" className=" col-sm-5 control-label">Intervalo (hora)</label>
                                                     <div className="col-sm-5">
-                                                        <input type="number" className="form-control" id="interval" name="interval" 
+                                                        <input type="number" className="form-control" id="interval" name="interval"
                                                          onChange={(value) => this.setState({intervalo: value.target.value})}/>
                                                     </div>
-                                                </div>                                     
-                                                
+                                                </div>
+
                                                 <div className="form-group">
                                                     <label htmlFor="date" className="col-sm-5 control-label">Data Inicial</label>
                                                     <div className="col-sm-9">
-                                                        <input type="date" className="form-control" id="date" name="date" 
+                                                        <input type="date" className="form-control" id="date" name="date"
                                                          onChange={(value) => this.setState({dataInicial: value.target.value})}/>
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="date" className="col-sm-5 control-label">Data Final</label>
                                                     <div className="col-sm-9">
-                                                        <input type="date" className="form-control" id="date" name="date" 
+                                                        <input type="date" className="form-control" id="date" name="date"
                                                          onChange={(value) => this.setState({dataFinal: value.target.value})}/>
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
                                                     <div className="col-sm-5 text-center">
-                                                        <Button outline type="button" size="sm" className="btn btn-default preview-add-button" 
+                                                        <Button outline type="button" size="sm" className="btn btn-default preview-add-button"
                                                             onClick={this.handleAdd}>
                                                             <span  className="glyphicon glyphicon-plus"></span> Adicionar
                                                         </Button>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-sm-6">                                        
+                                    <div className="col-sm-6">
                                         <div className="row">
                                             <div className="">
                                                 <div className="table-responsive">
                                                     <table className="table preview-table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Medicamento</th>                                                                
+                                                                <th>Medicamento</th>
                                                                 <th>Dose</th>
                                                                 <th>Quantidade</th>
                                                                 <th>Intervalo</th>
                                                                 <th></th>
-                                                                                                                               
+
                                                             </tr>
-                                                        </thead>                                                        
-                                                        <tbody> 
-                                                        { this.state.meds.map((medicamento) =>                                                                                                                      
+                                                        </thead>
+                                                        <tbody>
+                                                        { this.state.meds.map((medicamento) =>
                                                             <tr key = {medicamento.nome}>
                                                                 <th>{medicamento.nome}</th>
-                                                                <th>{medicamento.dosagem}</th>                                                                
+                                                                <th>{medicamento.dosagem}</th>
                                                                 <th>{medicamento.quantidade}</th>
-                                                                <th>{medicamento.intervalo}</th>                                                                
+                                                                <th>{medicamento.intervalo}</th>
                                                                 <th><button type="button" class="close" aria-label="Close"
                                                                         onClick={() => this.handleRemove(medicamento)}>
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button></th>
-                                                                
+
                                                                     </tr>
                                                         )}
                                                         </tbody>
@@ -205,13 +205,13 @@ class Prescription extends React.Component {
                                             <div className="col-xs-12">
                                             <Button size = "sm" onClick={() => this.handlePrescription()}>Receitar!</Button>
                                             </div>
-                                        </div> 
-                                                                             
+                                        </div>
+
                                     </div>
                                     </div>
-                                    
+
                                 </section>
-                                
+
                             </div>
                         </div>
 
@@ -219,7 +219,7 @@ class Prescription extends React.Component {
                     </div>
         </div>
         </Card>
-   
+
         );
     }
 }

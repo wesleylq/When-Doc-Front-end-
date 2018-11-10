@@ -37,3 +37,26 @@
 #myTab {
 	padding-left: 24px;
 }
+
+
+
+
+
+input#tabCriarPacienteNovo {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+input#tabImportarNovoPaciente {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+#tabCriarPacienteNovo:checked ~ #contentCriarPacienteNovo,
+#tabImportarNovoPaciente:checked ~ #contentImportarNovoPaciente {
+  display: block;
+  background: #fff;
+  margin-left: 5%;
+}
