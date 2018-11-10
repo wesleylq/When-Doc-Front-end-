@@ -19,10 +19,11 @@ handleSubmit = () => {
     const novaInfo = this.novasInformacoes(this.state.especialidade, this.state.email, this.state.telefone);
     const newDoctor = {
       nome: this.props.nome,
+      crm : this.props.crm,
       especialidade : novaInfo.novaEspecialidade,
       cpf : this.props.cpf,
-      crm : this.props.crm,
       email: novaInfo.novoEmail,
+      senha : this.props.senha,
       telefone: novaInfo.novoTelefone
 
     }
@@ -31,11 +32,13 @@ handleSubmit = () => {
     api.saveDoctor(newDoctor,Auth.getDoctor()).then(res => {
         console.log(res);
         console.log(res.data);
-    })
+    }).catch(error => {
+      console.log(error.response);
+})
 
 }
 
-  novasInformacoes = (especialidade, email, telefone) => { 
+  novasInformacoes = (especialidade, email, telefone) => {
     var info = {
       novaEspecialidade : this.props.especialidade,
       novoEmail : this.props.email,
@@ -62,7 +65,6 @@ handleSubmit = () => {
   }
 
   render() {
-    //console.log(Auth.getDoctor);
     return (
       <div>
         <i onClick={() => this.toggle(14)} id='iconeButtonConfiguracaoMedico' className="navbar-toggler fa fa-cog" aria-hidden="true"></i>
@@ -74,7 +76,7 @@ handleSubmit = () => {
                 <Input type="email" onChange={(value) => this.setState({email: value.target.value})} label="novo email"/>
                 <Input type="text" onChange={(value) => this.setState({telefone: value.target.value})}  label="novo telefone" />
             </ModalBody>
-            <Button color="mdb-color" onClick={this.handleSubmit} >Atualizar</Button>
+            <Button color="mdb-color" type='submit' onClick={this.handleSubmit} >Atualizar</Button>
             <Button color="secondary" onClick={() => this.toggle(14)} className="float-right">Sair</Button>
           </form>
         </Modal>
