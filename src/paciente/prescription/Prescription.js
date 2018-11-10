@@ -2,6 +2,7 @@ import React from 'react';
 import { Card,Button } from 'mdbreact';
 import "./Prescription.css"
 import { withRouter } from "react-router-dom";
+import api from "../../Api"
 
 class Prescription extends React.Component {
     constructor(props) {
@@ -19,8 +20,10 @@ class Prescription extends React.Component {
             descricao: this.state.descricao,
             dosagem: this.state.dosagem,
             intervalo: this.state.intervalo,
-            quantidade: this.state.quantidade
-            
+            quantidade: this.state.quantidade,
+            DataInicial: this.state.dataInicial,
+            DataFinal:this.state.dataFinal,
+            horario: null            
           }
           this.setState({
             meds: [...this.state.meds, medicamento]
@@ -33,7 +36,11 @@ class Prescription extends React.Component {
         this.setState({meds: array });        
      }
 
-     handlePrescription(){        
+     handlePrescription(){
+        for (var med of this.state.meds){            
+            api.saveMedicamentos(med,this.props.cpf)
+        }
+                 
         this.setState({meds: [] });    
         window.location.reload();
      }
@@ -114,8 +121,22 @@ class Prescription extends React.Component {
                                                         <input type="number" className="form-control" id="interval" name="interval" 
                                                          onChange={(value) => this.setState({intervalo: value.target.value})}/>
                                                     </div>
-                                                </div>                                                
+                                                </div>                                     
                                                 
+                                                <div className="form-group">
+                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Inicial</label>
+                                                    <div className="col-sm-9">
+                                                        <input type="date" className="form-control" id="date" name="date" 
+                                                         onChange={(value) => this.setState({dataInicial: value.target.value})}/>
+                                                    </div>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Final</label>
+                                                    <div className="col-sm-9">
+                                                        <input type="date" className="form-control" id="date" name="date" 
+                                                         onChange={(value) => this.setState({dataFinal: value.target.value})}/>
+                                                    </div>
+                                                </div>
                                                 <div className="form-group">
                                                     <div className="col-sm-5 text-center">
                                                         <Button outline type="button" size="sm" className="btn btn-default preview-add-button" 
@@ -123,6 +144,7 @@ class Prescription extends React.Component {
                                                             <span  className="glyphicon glyphicon-plus"></span> Adicionar
                                                         </Button>
                                                     </div>
+                                                    
                                                 </div>
                                                 </form>
                                             </div>

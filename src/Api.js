@@ -13,7 +13,8 @@ const apis = {
      loadDoctor: (crm) => api.get(`/medico/${crm}`),
      saveDoctor: (newDoctor,crm) => api.put(`/medico/${crm}`,newDoctor),
      loadDiagnosticos: () => api.get('diagnosticos'),
-     loadMedicamentos: () => api.get('medicamentos')
+     loadMedicamentos: () => api.get('medicamentos'),
+     saveMedicamentos: (medicamento,cpf) => api.post(`/paciente/medicamento/${cpf}`,medicamento)
 }
 
 export default apis;

@@ -6,15 +6,15 @@ import Prescription from './prescription/Prescription.js';
 const TabsConsultaPaciente = (props) => {
   return (
 	  	<div>
-	  		<ul className="nav peach-gradient nav-justified lighten-3 py-3 mb-3 font-weight-bold z-depth-1" id="myTab" role="tablist">
+	  		<ul className="nav nav-justified lighten-3 py-3 mb-3 font-weight-bold z-depth-1" id="myTab" role="tablist">
 			  	<li className="nav-item">
-			    	<a className="nav-link active" id="tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true">perfil</a>
+			    	<a className="nav-link active" id="tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="Perfil" aria-selected="true">Perfil</a>
 			 	</li>
 			  	<li className="nav-item">
-			   		<a className="nav-link" id="tab" data-toggle="tab" href="#historico" role="tab" aria-controls="historico" aria-selected="false">historico</a>
+			   		<a className="nav-link" id="tab" data-toggle="tab" href="#historico" role="tab" aria-controls="Histórico" aria-selected="false">Histórico</a>
 			  	</li>
 			  	<li className="nav-item">
-				    <a className="nav-link" id="tab" data-toggle="tab" href="#receituario" role="tab" aria-controls="receituario" aria-selected="false">receituario</a>
+				    <a className="nav-link" id="tab" data-toggle="tab" href="#receituario" role="tab" aria-controls="Receituário" aria-selected="false">Receituário</a>
 				</li>
 			</ul>
 			<div className="tab-content" id="myTabContent">
@@ -36,7 +36,8 @@ const TabsConsultaPaciente = (props) => {
 		                    />
         		</div>
 				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab"><Historico/></div>
-				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription nome ={props.nome}/></div>
+				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription 
+					nome ={props.nome} cpf={props.cpf}/></div>
 			</div>
 		</div>
     );

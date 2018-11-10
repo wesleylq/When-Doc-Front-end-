@@ -57,17 +57,7 @@ class LoginForm extends React.Component {
               });
           }}, 1000)
            
-      }
-
-      validateUser = (email,senha) => {
-          
-        for (var user of this.state.users) {            
-            if(email === user.email && senha === user.senha){
-                return true
-            }
-          }
-          return false
-      }
+      }     
 
 
     render() {

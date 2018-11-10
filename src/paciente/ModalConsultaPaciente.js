@@ -20,7 +20,7 @@ class ModalConsultaPaciente extends Component {
     return (
       <div>
         <Button size="sm" onClick={this.toggle}>Consultar</Button>
-        <Modal size ="lg" isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal size ="fluid" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
             <TabsConsultaPaciente
                         nome={this.props.nome}
