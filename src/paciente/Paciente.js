@@ -21,8 +21,7 @@ class Paciente extends Component {
         api.loadDoctor(Auth.getDoctor())
         .then(res => {
             const medico = res.data;
-            this.setState({ medico });
-            console.log(medico.crm);
+            this.setState({ medico });            
 
 
             api.loadPatients(medico.crm)
@@ -73,6 +72,7 @@ class Paciente extends Component {
                                                cidade={paciente.endereco.cidade}
                                                pais={paciente.endereco.pais}
                                                cep={paciente.endereco.cep}
+                                               crm={this.state.medico.crm}
                                                />
                                </td>
                            </tr>)}

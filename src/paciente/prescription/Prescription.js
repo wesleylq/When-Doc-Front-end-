@@ -8,9 +8,11 @@ class Prescription extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            meds: []           
+            meds: []
          };   
-              
+        this.handleAdd = this.handleAdd.bind(this) ;
+        this.handlePrescription = this.handlePrescription.bind(this) ; 
+         
     }
    
 
@@ -23,7 +25,7 @@ class Prescription extends React.Component {
             quantidade: this.state.quantidade,
             DataInicial: this.state.dataInicial,
             DataFinal:this.state.dataFinal,
-            horario: null            
+            horario: "50"            
           }
           this.setState({
             meds: [...this.state.meds, medicamento]
@@ -37,12 +39,25 @@ class Prescription extends React.Component {
      }
 
      handlePrescription(){
-        for (var med of this.state.meds){            
-            api.saveMedicamentos(med,this.props.cpf)
+        const diagnostico = {
+            nomeDiagnostico: this.state.nomeDiagnostico,
+            descricao: this.state.descricao
         }
-                 
+        
+        const medicamentos = this.state.meds;
+        
+             
+        api.addConsulta(diagnostico,this.props.crm,this.props.cpf).then(res => {      
+            const consulta = res.data;
+            console.log(medicamentos)            
+            api.saveMedicamentos(medicamentos,this.props.crm,this.props.cpf,consulta.id)
+            
+
+          });
+        
+     
         this.setState({meds: [] });    
-        window.location.reload();
+        //window.location.reload();
      }
 
      
@@ -67,13 +82,15 @@ class Prescription extends React.Component {
                                         <div className="form-group">
                                             <label htmlFor="concept" className="control-label">Diagnostico</label>
                                             <div>
-                                                <input type="text" className="form-control" />
+                                                <input type="text" className="form-control" 
+                                                    onChange={(value) => this.setState({nomeDiagnostico: value.target.value})}/>
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="description" className="control-label">Descrição</label>
                                             <div>
-                                                <textarea className="form-control" type="textarea" id="message" rows="2"></textarea>
+                                                <textarea className="form-control" type="textarea" id="message" rows="2"
+                                                    onChange={(value) => this.setState({descricao: value.target.value})}></textarea>
                                             </div>
                                         </div>
                                     </div>

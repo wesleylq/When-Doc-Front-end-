@@ -11,13 +11,13 @@ class DataTableMedicamentos extends Component {
          };
         
     }
-    
+    /*
     componentDidMount() {
       api.loadMedicamentos().then(res => {
           const medicamentos = res.data;
           this.setState({ medicamentos });
       })
-  }
+    }*/
 
     render() {
         return (

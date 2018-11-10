@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalBody } from 'mdbreact';
 import TabsConsultaPaciente from './TabsConsultaPaciente'
+import api from "../Api"
 
 class ModalConsultaPaciente extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      consulta:""
     };
   }
+
+  
 
   toggle = () => {
     this.setState({
@@ -37,6 +41,8 @@ class ModalConsultaPaciente extends Component {
                         cidade={this.props.cidade}
                         pais={this.props.pais}
                         cep={this.props.cep}
+                        crm={this.props.crm}
+                        consultaId = {this.state.consulta.id}
                         />
             <Button size="sm" color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
           </ModalBody>
