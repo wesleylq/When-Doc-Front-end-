@@ -6,12 +6,13 @@ const api = axios.create({
 
 
 const apis = {
-     saveUser: (newUser) => api.post("/medico/cadastrar",newUser),    
+     saveUser: (newUser) => api.post("/medico/cadastrar",newUser),
      getDoctor: (user) => api.post("medico/login/", user),
      savePatient: (newPatient) => api.post("/paciente/cadastrar",newPatient),
      loadPatients: (crm) => api.get(`/medico/${crm}/pacientes`),
+     addPatients: (crm, cpf) => api.post(`/medico/${crm}/addPaciente/${cpf}`),
      loadDoctor: (crm) => api.get(`/medico/${crm}`),
-     saveDoctor: (newDoctor,crm) => api.put(`/medico/${crm}`,newDoctor),         
+     saveDoctor: (newDoctor,crm) => api.put(`/medico/${crm}`,newDoctor),
      saveMedicamentos: (medicamentos,cpf,crm,idConsulta) => api.post(`/medico/${crm}/${idConsulta}/medicamento/${cpf}`,medicamentos),
      addConsulta:(diagnostico,crm,cpf) => api.post(`medico/${crm}/addConsulta/${cpf}`,diagnostico),
      loadDiagnosticos: (cpf) => api.get(`/paciente/${cpf}/diagnosticos`),
