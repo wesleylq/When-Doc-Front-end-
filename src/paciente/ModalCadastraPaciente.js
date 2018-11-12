@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Modal, ModalBody, Row, Card} from 'mdbreact';
+import { Col, Button, Modal, ModalBody, Row, Card, FormInline, Input} from 'mdbreact';
 import Label from '../components/Label.js'
 import api from '../Api';
 import Auth from "../login/Auth";
@@ -12,6 +12,7 @@ import Auth from "../login/Auth";
   }
   this.toggle = this.toggle.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.importPatients = this.importPatients.bind(this);
 }
 
 handleSubmit(){
@@ -49,8 +50,19 @@ handleSubmit(){
         console.log(res.data);
       });
   }, 1000)
-  
+
 }
+
+
+
+importPatients(){
+      const cpf = this.state.cpf;
+      api.addPatients(Auth.getDoctor(), cpf).then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+}
+
 
 toggle() {
   this.setState({
@@ -147,7 +159,7 @@ render() {
                                 <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
                               </div>
                             </Row>
-                            <Button color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
+                            <Button type="submit" color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
                             <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
                           </div>
                         </form>
@@ -155,7 +167,10 @@ render() {
 
                   </section>
                   <section id="contentImportarNovoPaciente">
-
+                      <FormInline>
+                        <input  name='cpfImport' onChange={(value) => this.setState({cpf: value.target.value})} type="number" className="form-control" placeholder="Cpf" required/>
+                        <Button type="submit" color="mdb-color" onClick={this.importPatients}>Importar</Button>
+                      </FormInline>
                   </section>
                 </div>
             </Card>

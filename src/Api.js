@@ -8,6 +8,7 @@ const api = axios.create({
 const apis = {
      saveUser: (newUser) => api.post("/medico/cadastrar",newUser),
      getDoctor: (user) => api.post("medico/login/", user),
+     getPatient: (cpf) => api.get(`/paciente/${cpf}`),
      savePatient: (newPatient) => api.post("/paciente/cadastrar",newPatient),
      loadPatients: (crm) => api.get(`/medico/${crm}/pacientes`),
      addPatients: (crm, cpf) => api.post(`/medico/${crm}/addPaciente/${cpf}`),
