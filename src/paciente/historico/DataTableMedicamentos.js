@@ -22,8 +22,8 @@ class DataTableMedicamentos extends Component {
         return (
           <BootstrapTable data={ this.state.medicamentos } trClassName="tr-string-example">
             <TableHeaderColumn isKey dataField='nome' filter={ { type: 'TextFilter' , placeholder:"Filtrar..."  } }>Nome</TableHeaderColumn>
-            <TableHeaderColumn dataField='dosagem' filter={ { type: 'TextFilter' , placeholder:"Filtrar..."  } }>Dosagem</TableHeaderColumn>
-            <TableHeaderColumn dataField='intervalo' filter={ { type: 'TextFilter' , placeholder:"Filtrar..."  } }>Intervalo</TableHeaderColumn>
+            <TableHeaderColumn dataField='dosagem'>Dosagem</TableHeaderColumn>
+            <TableHeaderColumn dataField='dataInicial' filter={ { type: 'TextFilter' , placeholder:"Filtrar..."  } }>Data</TableHeaderColumn>
           </BootstrapTable>
         );
       }

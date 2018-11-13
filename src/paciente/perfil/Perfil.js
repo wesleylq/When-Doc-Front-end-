@@ -14,8 +14,8 @@ const Perfil = (props) => {
 
               <section id="contentDadosPaciente">
                 <p><strong>Nome: </strong>{props.nome}</p>
-                <p><strong>Cpf: </strong>{props.email}</p>
-                <p><strong>Email: </strong>{props.cpf}</p>
+                <p><strong>Cpf: </strong>{props.cpf}</p>
+                <p><strong>Email: </strong>{props.email}</p>
                 <p><strong>Email Secundario: </strong>{props.emailSec}</p>
                 <p><strong>Telefone: </strong>{props.telefone}</p>
                 <p><strong>TelefoneSec: </strong>{props.telefoneSec}</p>
