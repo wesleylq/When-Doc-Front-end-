@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Button, Modal, ModalBody, Row, Card, FormInline, Input} from 'mdbreact';
-import Label from '../components/Label.js'
+import { Col, Button, Modal, ModalBody, Row, Card, FormInline} from 'mdbreact';
 import api from '../Api';
 import Auth from "../login/Auth";
 

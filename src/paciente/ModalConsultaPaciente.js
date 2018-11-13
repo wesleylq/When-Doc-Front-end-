@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalBody } from 'mdbreact';
 import TabsConsultaPaciente from './TabsConsultaPaciente'
-import api from "../Api"
 
 class ModalConsultaPaciente extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class ModalConsultaPaciente extends Component {
     return (
       <div>
         <Button size="sm" onClick={this.toggle}>Consultar</Button>
-        <Modal size ="fluid" isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal size ="lg" isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
             <TabsConsultaPaciente
                         nome={this.props.nome}

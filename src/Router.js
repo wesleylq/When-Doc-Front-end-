@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter ,Switch, Route, Redirect } from 'react-router-dom';
+import {Switch, Route, Redirect } from 'react-router-dom';
 import Paciente from './paciente/Paciente.js';
 import MeuPerfil from './meuPerfil/MeuPerfil.js';
 import Auth from "./login/Auth";
-import Navbar from './menu/NavBar.js';
-import NavBar from './menu/NavBar.js';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route

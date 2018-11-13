@@ -118,6 +118,20 @@ class Prescription extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="form-group">
+                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Inicial</label>
+                                                    <div className="col-sm-7">
+                                                        <input type="date" className="form-control" id="date" name="date"
+                                                         onChange={(value) => this.setState({dataInicial: value.target.value})}/>
+                                                    </div>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Final</label>
+                                                    <div className="col-sm-7">
+                                                        <input type="date" className="form-control" id="date" name="date"
+                                                         onChange={(value) => this.setState({dataFinal: value.target.value})}/>
+                                                    </div>
+                                                </div>
+                                                <div className="form-group">
                                                     <label htmlFor="amount" className=" col-sm-5 control-label">Dosagem (mg)</label>
                                                     <div className="col-sm-5">
                                                         <input type="number" className="form-control" id="dose" name="dose"
@@ -139,21 +153,7 @@ class Prescription extends React.Component {
                                                          onChange={(value) => this.setState({intervalo: value.target.value})}/>
                                                     </div>
                                                 </div>
-
-                                                <div className="form-group">
-                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Inicial</label>
-                                                    <div className="col-sm-9">
-                                                        <input type="date" className="form-control" id="date" name="date"
-                                                         onChange={(value) => this.setState({dataInicial: value.target.value})}/>
-                                                    </div>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="date" className="col-sm-5 control-label">Data Final</label>
-                                                    <div className="col-sm-9">
-                                                        <input type="date" className="form-control" id="date" name="date"
-                                                         onChange={(value) => this.setState({dataFinal: value.target.value})}/>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div className="form-group">
                                                     <div className="col-sm-5 text-center">
                                                         <Button outline type="button" size="sm" className="btn btn-default preview-add-button"
