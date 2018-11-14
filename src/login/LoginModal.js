@@ -89,9 +89,9 @@ class LoginModal extends React.Component {
                     <Input label="CPF" className="mt-4" onChange={(value) => this.setState({cpf: value.target.value})} 
                     autoFocus={this.calculateAutofocus(1)}/>
                     <Input label="Nome Completo" className="mt-4" onChange={(value) => this.setState({nome: value.target.value})}/>
-                    <Input label="Email" className="mt-4" onChange={(value) => this.setState({email: value.target.value})}/>
+                    <Input label="Email" group type="email" className="mt-4" onChange={(value) => this.setState({email: value.target.value})}/>
                     <Input label="Telefone" className="mt-4" onChange={(value) => this.setState({telefone: value.target.value})}/>                    
-                    <Input label="Senha" className="mt-4" onChange={(value) => this.setState({senha: value.target.value})}/>
+                    <Input label="Senha" group type="password" className="mt-4" onChange={(value) => this.setState({senha: value.target.value})}/>
                     <Input label="Repita a senha" className="mt-4" onChange= {(value) => this.setState({senhaVal: value.target.value})}/>
                     <Button rounded className="float-right" onClick={this.handleNextPrevClick(1)(2)}>próximo</Button>
                   </Col>)}
