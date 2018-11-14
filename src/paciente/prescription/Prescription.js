@@ -50,14 +50,17 @@ class Prescription extends React.Component {
         api.addConsulta(diagnostico,this.props.crm,this.props.cpf).then(res => {
             const consulta = res.data;
             console.log(medicamentos)
-            api.saveMedicamentos(medicamentos,this.props.crm,this.props.cpf,consulta.id)
+            console.log(this.props)
+            api.saveMedicamentos(medicamentos,this.props.cpf,this.props.crm,consulta.id)
 
 
           });
 
-
+       
         this.setState({meds: [] });
         window.location.reload();
+        
+        
      }
 
 
@@ -189,7 +192,7 @@ class Prescription extends React.Component {
                                                                 <th>{medicamento.dosagem}</th>
                                                                 <th>{medicamento.quantidade}</th>
                                                                 <th>{medicamento.intervalo}</th>
-                                                                <th><button type="button" class="close" aria-label="Close"
+                                                                <th><button type="button" className="close" aria-label="Close"
                                                                         onClick={() => this.handleRemove(medicamento)}>
                                                                         <span aria-hidden="true">&times;</span>
                                                                         </button></th>
