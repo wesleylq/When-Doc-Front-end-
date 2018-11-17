@@ -14,7 +14,7 @@ class ModalCadastraPaciente extends Component {
   this.importPatients = this.importPatients.bind(this);
 }
 
-handleSubmit(){
+handleSubmit = () => {
   const newPatient = {
     nome: this.state.nome,
     email: this.state.email,
@@ -45,18 +45,18 @@ handleSubmit(){
     console.log(error.response)
 });
 
-  setTimeout(() =>{
+  setTimeout( () => {
       api.addPatients(Auth.getDoctor(), newPatient.cpf).then(res => {
         console.log(res);
         console.log(res.data);
       }).catch(error => {
       console.log(error.response)
     });
-  }, 500)
+  }, 1000)
 
 }
 
-importPatients(){
+importPatients = () => {
       const cpf = this.state.cpf;
       api.addPatients(Auth.getDoctor(), cpf).then(res => {
         console.log(res);
@@ -164,7 +164,7 @@ render() {
                   <section id="contentImportarNovoPaciente">
                       <FormInline>
                         <input  name='cpfImport' onChange={(value) => this.setState({cpf: value.target.value})} type="number" className="form-control" placeholder="Cpf" required/>
-                        <Button type="submit" color="mdb-color" onClick={this.importPatients()}>Importar</Button>
+                        <Button type="submit" color="mdb-color" onClick={this.importPatients}>Importar</Button>
                       </FormInline>
                   </section>
                 </div>
