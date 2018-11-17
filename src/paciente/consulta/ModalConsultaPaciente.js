@@ -11,8 +11,6 @@ class ModalConsultaPaciente extends Component {
     };
   }
 
-  
-
   toggle = () => {
     this.setState({
       modal: !this.state.modal

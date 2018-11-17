@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Paciente.css'
-import { Table, TableBody, TableHead  } from 'mdbreact'
-import ModalCadastraPaciente from './ModalCadastraPaciente'
+import './Paciente.css';
+import { Table, TableBody, TableHead  } from 'mdbreact';
+import ModalCadastraPaciente from './ModalCadastraPaciente';
 import api from '../Api';
-import ModalConsultaPaciente from './ModalConsultaPaciente'
+import ModalConsultaPaciente from './consulta/ModalConsultaPaciente.js';
 import Auth from "../login/Auth";
 
 class Paciente extends Component {
@@ -14,29 +14,22 @@ class Paciente extends Component {
              medico: "",
              pacientes: []
         }
-
       }
 
     componentDidMount() {
         api.loadDoctor(Auth.getDoctor())
         .then(res => {
             const medico = res.data;
-            this.setState({ medico });            
+            this.setState({ medico });
 
 
             api.loadPatients(medico.crm)
             .then(res => {
                 const pacientes = res.data;
                 this.setState({ pacientes });
-                //console.log(pacientes);
             })
-
-
         })
-
-
     }
-
 
       render() {
         return (

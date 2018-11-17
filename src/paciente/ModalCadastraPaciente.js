@@ -3,7 +3,7 @@ import { Col, Button, Modal, ModalBody, Row, Card, FormInline} from 'mdbreact';
 import api from '../Api';
 import Auth from "../login/Auth";
 
- class ModalCadastraPaciente extends Component {
+class ModalCadastraPaciente extends Component {
  constructor(props) {
   super(props);
   this.state = {
@@ -41,27 +41,30 @@ handleSubmit(){
     api.savePatient(newPatient).then(res => {
       console.log(res);
       console.log(res.data);
-  });
+  }).catch(error => {
+    console.log(error.response)
+});
 
   setTimeout(() =>{
       api.addPatients(Auth.getDoctor(), newPatient.cpf).then(res => {
         console.log(res);
         console.log(res.data);
-      });
-  }, 500)
+      }).catch(error => {
+      console.log(error.response)
+    });
+  }, 1000)
 
 }
-
-
 
 importPatients(){
       const cpf = this.state.cpf;
       api.addPatients(Auth.getDoctor(), cpf).then(res => {
         console.log(res);
         console.log(res.data);
-      });
+      }).catch(error => {
+      console.log(error.response)
+  });
 }
-
 
 toggle() {
   this.setState({
@@ -75,7 +78,6 @@ render() {
       <i onClick={this.toggle} id='iconeButtonCadastrarPaciente' className="navbar-toggler fa fa-user-plus" aria-hidden="true"></i>
       <Modal isOpen={this.state.modal} toggle={this.toggle} size="lg">
         <ModalBody>
-
             <Card>
                 <div className="tab_container">
                   <input id="tabCriarPacienteNovo" type="radio" name="tabs5" defaultChecked/>
@@ -143,7 +145,7 @@ render() {
                                 <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
                               </div>
                             </Row>
-                            <Button type="submit" color="mdb-color" onClick={this.handleSubmit()}>Cadastar</Button>
+                            <Button type="submit" color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
                             <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
                           </div>
                         </form>

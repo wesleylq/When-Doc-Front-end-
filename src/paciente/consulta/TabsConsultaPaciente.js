@@ -1,7 +1,7 @@
 import React from 'react';
-import Perfil from './perfil/Perfil.js'
-import Historico from './historico/Historico.js'
-import Prescription from './prescription/Prescription.js';
+import Perfil from '../perfil/Perfil.js'
+import Historico from '../historico/Historico.js'
+import Prescription from '../prescription/Prescription.js';
 
 const TabsConsultaPaciente = (props) => {
   return (
@@ -36,7 +36,7 @@ const TabsConsultaPaciente = (props) => {
 		                    />
         		</div>
 				<div className="tab-pane fade" id="historico" role="tabpanel" aria-labelledby="historico-tab"><Historico cpf={props.cpf}/></div>
-				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription 
+				<div className="tab-pane fade" id="receituario" role="tabpanel" aria-labelledby="receituario-tab"><Prescription
 					nome ={props.nome} cpf={props.cpf} crm={props.crm}/></div>
 			</div>
 		</div>
