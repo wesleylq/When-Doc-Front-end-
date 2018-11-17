@@ -52,7 +52,7 @@ handleSubmit(){
       }).catch(error => {
       console.log(error.response)
     });
-  }, 1000)
+  }, 500)
 
 }
 
@@ -100,7 +100,16 @@ render() {
                                 <input  name='cpf' onChange={(value) => this.setState({cpf: value.target.value})} type="number" id="defaultFormRegisterEmailEx2" className="form-control" placeholder="Cpf" required/>
                               </div>
                               <div className="col-md-4 mb-3">
-                                <input onChange={(value) => this.setState({tipoSanguineo: value.target.value})} type="text" id="defaultFormRegisterConfirmEx3" className="form-control" name='TipoSanguineo' placeholder="tipoSanguineo" required/>
+                                <select className="browser-default custom-select" onChange={(value) => this.setState({tipoSanguineo: value.target.value})} required>
+                                  <option value="A+">A+</option>
+                                  <option value="A-">A-</option>
+                                  <option value="B+">B+</option>
+                                  <option value="B-">B-</option>
+                                  <option value="AB+">AB+</option>
+                                  <option value="AB-">AB-</option>
+                                  <option value="O+">O+</option>
+                                  <option value="O-">O-</option>
+                                </select>
                               </div>
                             </Row>
                             <Row>
@@ -108,7 +117,7 @@ render() {
                                 <input  onChange={(value) => this.setState({email: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
                               </div>
                               <div className="col-md-4 mb-3">
-                                <input  onChange={(value) => this.setState({emailSec: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email" required/>
+                                <input  onChange={(value) => this.setState({emailSec: value.target.value})} type="email" id="defaultFormRegisterConfirmEx3" className="form-control" name='email' placeholder="Email"/>
                               </div>
                             </Row>
                             <Row>
@@ -116,7 +125,7 @@ render() {
                                 <input onChange={(value) => this.setState({telefone: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
                               </div>
                               <div className="col-md-4 mb-3">
-                                <input  name='telefone' onChange={(value) => this.setState({telefoneSec: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone" required/>
+                                <input  name='telefone' onChange={(value) => this.setState({telefoneSec: value.target.value})} type="text" id="defaultFormRegisterNameEx" className="form-control" placeholder="Telefone"/>
                               </div>
                             </Row>
                             <Row>
@@ -130,7 +139,7 @@ render() {
                                 <input onChange={(value) => this.setState({numero: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='numero' placeholder="Numero" required/>
                               </div>
                               <div className="col-md-4 mb-3">
-                                <input  onChange={(value) => this.setState({complemento: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='complemento' placeholder="Complemento" required/>
+                                <input  onChange={(value) => this.setState({complemento: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='complemento' placeholder="Complemento"/>
                               </div>
                               <div className="col-md-4 mb-3">
                                 <input onChange={(value) => this.setState({cidade: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cidade' placeholder="Cidade" required/>
@@ -145,7 +154,7 @@ render() {
                                 <input  onChange={(value) => this.setState({cep: value.target.value})} type="text" id="defaultFormRegisterPasswordEx4" className="form-control" name='cep' placeholder="Cep" required/>
                               </div>
                             </Row>
-                            <Button type="submit" color="mdb-color" onClick={this.handleSubmit}>Cadastar</Button>
+                            <Button type="submit" color="mdb-color" onClick={this.handleSubmit()}>Cadastar</Button>
                             <Button color="secondary" onClick={this.toggle} className="float-right">Fechar</Button>{' '}
                           </div>
                         </form>
@@ -155,7 +164,7 @@ render() {
                   <section id="contentImportarNovoPaciente">
                       <FormInline>
                         <input  name='cpfImport' onChange={(value) => this.setState({cpf: value.target.value})} type="number" className="form-control" placeholder="Cpf" required/>
-                        <Button type="submit" color="mdb-color" onClick={this.importPatients}>Importar</Button>
+                        <Button type="submit" color="mdb-color" onClick={this.importPatients()}>Importar</Button>
                       </FormInline>
                   </section>
                 </div>
