@@ -51,7 +51,7 @@ class Prescription extends React.Component {
             const consulta = res.data;
             console.log(medicamentos)
             console.log(this.props)
-            api.saveMedicamentos(medicamentos,this.props.crm,this.props.cpf,consulta.id)
+            api.saveMedicamentos(medicamentos,this.props.cpf,this.props.crm,consulta.id)
 
 
           });
