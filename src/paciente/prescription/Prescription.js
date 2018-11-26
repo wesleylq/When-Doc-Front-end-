@@ -58,7 +58,7 @@ class Prescription extends React.Component {
 
        
         this.setState({meds: [] });
-        window.location.reload();
+        //window.location.reload();
         
         
      }
